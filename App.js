@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import Login from './src/NavigationScreens/Login'
+import Home from './src/NavigationScreens1/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,19 +10,10 @@ export default function NortePetHospedagem () {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="Home"
+          component={Home}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#D39C69',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
