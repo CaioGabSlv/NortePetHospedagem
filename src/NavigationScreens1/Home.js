@@ -1,11 +1,10 @@
-import {View, Text, StyleSheet, Button} from 'react-native'
+import { View, Text, StyleSheet, Button } from 'react-native'
 
 const Home = () => {
     return (
         <View style={styles.container}>
             <Text style={{fontSize: 20}}>Hi, welcome João!</Text>
         </View>
-
     );
 }
 
