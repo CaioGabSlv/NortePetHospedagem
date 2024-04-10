@@ -7,6 +7,7 @@ import { useFonts } from "expo-font";
 
 import Home from './src/NavigationScreens1/Home';
 import IntroScreen from './src/NavigationScreens1/IntroScreen';
+import Login from './src/NavigationScreens1/Login';
 import IntroScreen3 from './src/NavigationScreens1/IntroScreen3';
 import IntroScreen2 from './src/NavigationScreens1/IntroScreen2';
 
@@ -33,6 +34,11 @@ export default function NortePetHospedagem() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+          name="Login"
+          component={Login}
+        />
+      <Stack.Screen
         <Stack.Screen
           name="IntroScreen"
           component={IntroScreen}
