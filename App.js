@@ -12,7 +12,7 @@ import IntroScreen2 from './src/NavigationScreens1/IntroScreen2';
 
 const Stack = createNativeStackNavigator();
 
-export default function NortePetHospedagem () {
+export default function NortePetHospedagem() {
   const [fontsLoaded] = useFonts({
     "LeckerliOneRegular": require("./assets/fonts/LeckerliOneRegular.ttf"),
   });
