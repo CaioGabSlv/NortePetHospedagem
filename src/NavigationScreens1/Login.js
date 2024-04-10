@@ -1,4 +1,4 @@
-import { View,StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 
 const Login = () => {
     return (
