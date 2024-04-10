@@ -14,13 +14,13 @@ const IntroScreen3 = ({ navigation }) => {
                     <View style={styles.sphereOff}/>
                     <View style={styles.sphereOn}/>
                 </View>
-                <Image source={require('../../assets/paw.png')} style={styles.pawImage}/>
+                <Image source={require('../../assets/images/paw.png')} style={styles.pawImage}/>
                 <Text style={styles.text}>
                     Se necessário, entre em contato com o cuidador para negociar a hospedagem e serviços extras
                 </Text>
             </View>
             <View style={styles.containerBottom}>
-                <ImageBackground source={require('../../assets/screenBttmIntro.png')} style={styles.screenBottomImage}>
+                <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}>
                     <Button
                     mode="text"
                     buttonColor='#4e2500'

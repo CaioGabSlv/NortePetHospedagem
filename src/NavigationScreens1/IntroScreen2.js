@@ -19,13 +19,13 @@ const IntroScreen2 = ({ navigation }) => {
                     <View style={styles.sphereOn}/>
                     <View style={styles.sphereOff}/>
                 </View>
-                <Image source={require('../../assets/paw.png')} style={styles.pawImage}/>
+                <Image source={require('../../assets/images/paw.png')} style={styles.pawImage}/>
                 <Text style={styles.text}>
                     Com o nosso aplicativo, você pode escolher o cuidador mais adequado para a sua preferência
                 </Text>
             </View>
             <View style={styles.containerBottom}>
-                <ImageBackground source={require('../../assets/screenBttmIntro.png')} style={styles.screenBottomImage}>
+                <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}>
                     <Button
                     mode="text"
                     buttonColor='#4e2500'

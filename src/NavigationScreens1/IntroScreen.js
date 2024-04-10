@@ -19,13 +19,13 @@ const IntroScreen = ({ navigation }) => {
                     <View style={styles.sphereOff}/>
                     <View style={styles.sphereOff}/>
                 </View>
-                <Image source={require('../../assets/paw.png')} style={styles.pawImage}/>
+                <Image source={require('../../assets/images/paw.png')} style={styles.pawImage}/>
                 <Text style={styles.text}>
                     Aqui você encontra diversas opções de hospedagem para seu amiguinho de quatro patas
                 </Text>
             </View>
             <View style={styles.containerBottom}>
-                <ImageBackground source={require('../../assets/screenBttmIntro.png')} style={styles.screenBottomImage}>
+                <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}>
                     <Button
                     mode="text"
                     buttonColor='#4e2500'
