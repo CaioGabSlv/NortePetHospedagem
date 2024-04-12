@@ -39,6 +39,8 @@ export default function NortePetHospedagem() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        
+      
         <Stack.Screen
           name="IntroScreen"
           component={IntroScreen}
@@ -57,6 +59,7 @@ export default function NortePetHospedagem() {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="LoginHotel"
