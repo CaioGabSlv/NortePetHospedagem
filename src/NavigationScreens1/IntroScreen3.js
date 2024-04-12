@@ -27,7 +27,7 @@ const IntroScreen3 = ({ navigation }) => {
                     textColor='#fff'
                     style={styles.buttonNext}
                     labelStyle={styles.textButton}
-                    onPress={() => navigation.navigate('Login')}>
+                    onPress={() => navigation.navigate('LoginHotel')}>
                         Próximo
                     </Button>
                 </ImageBackground>
