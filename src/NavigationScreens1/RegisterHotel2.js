@@ -1,7 +1,11 @@
 import {View, StyleSheet, ImageBackground, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
+import { useState } from 'react';
 
 const RegisterHotel2 = ({ navigation }) => {
+
+    const [text, setText] = useState("");
+
     return (
         <>
             <View style={styles.container}>
@@ -27,7 +31,8 @@ const RegisterHotel2 = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='(92)99 881-1010'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Text style={styles.textHotelRate}>
                     Qual vai ser o valor da diária do hotel?
@@ -42,7 +47,8 @@ const RegisterHotel2 = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='R$ 50,00'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Button
                 mode="text"

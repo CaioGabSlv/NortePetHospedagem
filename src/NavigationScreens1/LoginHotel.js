@@ -1,7 +1,11 @@
-import {View, StyleSheet, Image, ImageBackground, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, ImageBackground, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
+import { useState } from 'react';
 
 const LoginHotel = ({ navigation }) => {
+
+    const [text, setText] = useState("");
+
     return (
         <>
             <View style={styles.container}>
@@ -28,7 +32,8 @@ const LoginHotel = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='hotel@gmail.com'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Text style={styles.inputLabelText}>
                     Senha
@@ -40,7 +45,8 @@ const LoginHotel = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='********'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Button
                 mode="text"
@@ -51,22 +57,22 @@ const LoginHotel = ({ navigation }) => {
                 onPress={() => navigation.navigate('HomeHotel')}>
                     Login
                 </Button>
-                <Button
-                mode="text"
-                textColor='#000'
-                style={styles.buttonPasswordRecovery}
-                labelStyle={styles.textPasswordRecovery}
-                onPress={() => navigation.navigate('PasswordRecovery')}>
-                    Esqueceu a senha?
-                </Button>
-                <Button
-                mode="text"
-                textColor='#000'
-                style={styles.buttonCreateAccount}
-                labelStyle={styles.textPasswordRecovery}
-                onPress={() => navigation.navigate('RegisterHotel')}>
-                    Criar uma conta
-                </Button>
+                <View style={styles.containerButtonsBottom}>
+                    <Button
+                    mode="text"
+                    textColor='#000'
+                    labelStyle={styles.textPasswordRecovery}
+                    onPress={() => navigation.navigate('PasswordRecovery')}>
+                        Esqueceu a senha?
+                    </Button>
+                    <Button
+                    mode="text"
+                    textColor='#000'
+                    labelStyle={styles.textPasswordRecovery}
+                    onPress={() => navigation.navigate('RegisterHotel')}>
+                        Criar uma conta
+                    </Button>
+                </View>
             </View>
             <View pointerEvents='none' style={styles.containerBottom}>
                 <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}/>
@@ -85,6 +91,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#d39C69',
         paddingVertical: '10%',
+    },
+    containerButtonsBottom: {
+        flexDirection: 'row',
+        top: '4%',
+        gap: 55,
     },
     containerBottom: {
         zIndex: 1,
@@ -105,6 +116,7 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     hotelImage: {
+        aspectRatio: 3/3,
         width: '52%',
         height: '30%',
     },
@@ -140,20 +152,12 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontWeight: 'bold',
     },
-    buttonPasswordRecovery: {
-        top: '2%',
-        right: '22%',
-    },
     textPasswordRecovery: {
         fontSize: 14,
         fontWeight: 'bold',
         fontFamily: 'InterRegular',
         textDecorationLine: 'underline',
         textAlign: 'left',
-    },
-    buttonCreateAccount: {
-        top: '-4.25%',
-        left: '22%',
     },
     screenBottomImage: {
         alignItems: 'center',

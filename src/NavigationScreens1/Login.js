@@ -1,4 +1,3 @@
-
 import { View, StyleSheet, Image, Text, SafeAreaView } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import * as React from 'react'

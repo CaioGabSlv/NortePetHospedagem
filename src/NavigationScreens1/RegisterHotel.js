@@ -1,7 +1,11 @@
 import {View, StyleSheet, ImageBackground, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
+import { useState } from 'react';
 
 const RegisterHotel = ({ navigation }) => {
+
+    const [text, setText] = useState("");
+
     return (
         <>
             <View style={styles.container}>
@@ -27,7 +31,8 @@ const RegisterHotel = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='Hotel'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Text style={styles.inputLabelText}>
                     Endereço
@@ -39,7 +44,8 @@ const RegisterHotel = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='Rua ABC, Bairro 123'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Text style={styles.inputLabelText}>
                     Número
@@ -51,7 +57,8 @@ const RegisterHotel = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='16'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Text style={styles.inputLabelText}>
                     CEP
@@ -63,7 +70,8 @@ const RegisterHotel = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='69080-912'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Text style={styles.inputLabelText}>
                     CNPJ
@@ -75,7 +83,8 @@ const RegisterHotel = ({ navigation }) => {
                 textColor='#000'
                 style={styles.textInput}
                 placeholder='12.345.678/0001-00'
-                onChangeText={() => {}}>
+                value={text}
+                onChangeText={text => setText(text)}>
                 </TextInput>
                 <Button
                 mode="text"
