@@ -1,7 +1,6 @@
 import { View, StyleSheet, Image, Text, SafeAreaView } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import * as React from 'react'
-import { FontAwesome } from '@expo/vector-icons';
 
 const Login = ({ navigation }) => {
 
