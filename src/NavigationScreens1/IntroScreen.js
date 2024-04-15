@@ -6,7 +6,7 @@ const IntroScreen = ({ navigation }) => {
         <>
             <View style={styles.containerMain}>
                 <Button
-                mode="text"
+                mode='text'
                 buttonColor='#904500'
                 textColor='#fff'
                 style={styles.buttonSkip}
@@ -27,7 +27,7 @@ const IntroScreen = ({ navigation }) => {
             <View style={styles.containerBottom}>
                 <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}>
                     <Button
-                    mode="text"
+                    mode='text'
                     buttonColor='#4e2500'
                     textColor='#fff'
                     style={styles.buttonNext}
@@ -83,6 +83,7 @@ const styles=StyleSheet.create({
         borderColor: '#904500',
     },
     sphereOn: {
+        aspectRatio: 1,
         backgroundColor: '#904500',
         width: '10%',
         height: '60%',
@@ -91,6 +92,7 @@ const styles=StyleSheet.create({
         borderColor: '#000',
     },
     sphereOff: {
+        aspectRatio: 1,
         backgroundColor: '#fff',
         width: '10%',
         height: '60%',

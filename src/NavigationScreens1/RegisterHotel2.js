@@ -1,146 +1,185 @@
-import {View, StyleSheet, ImageBackground, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
-const RegisterHotel2 = ({ navigation }) => {
+const LoginHotel = ({ navigation }) => {
 
     const [text, setText] = useState("");
 
     return (
-        <>
-            <View style={styles.container}>
-                <Button
-                mode="text"
-                icon={'keyboard-backspace'}
-                textColor='#000'
-                style={styles.buttonReturn}
-                labelStyle={styles.returnText}
-                onPress={() => navigation.navigate('RegisterHotel')}>
-                    Voltar
-                </Button>
-                <Text style={styles.mainText}>
-                    Cadastramento de Hotel
-                </Text>
-                <Text style={styles.inputLabelText}>
-                    Número de telefone
-                </Text>
+        <View style={styles.containerMain}>
+            <Button
+            style={styles.returnButton}
+            labelStyle={styles.textReturnButton}
+            icon="keyboard-backspace"
+            mode="text"
+            onPress={() => navigation.navigate('RegisterHotel')}>
+                Voltar
+            </Button>
+            <Text style={styles.containerText}>
+                Cadastro de Hotel
+            </Text>
+            <Text style={styles.containerTextAlt}>
+                Número de telefone
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
                 <TextInput
-                underlineColor='#000'
-                activeUnderlineColor='#000'
-                outlineColor='#000'
-                textColor='#000'
-                style={styles.textInput}
-                placeholder='(92)99 881-1010'
-                value={text}
-                onChangeText={text => setText(text)}>
-                </TextInput>
-                <Text style={styles.textHotelRate}>
-                    Qual vai ser o valor da diária do hotel?
-                </Text>
-                <Text style={styles.inputLabelText}>
-                    Valor diária
-                </Text>
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='(92)99 881-1010'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <Text style={styles.containerTextAlt}>
+                Email
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
                 <TextInput
-                underlineColor='#000'
-                activeUnderlineColor='#000'
-                outlineColor='#000'
-                textColor='#000'
-                style={styles.textInput}
-                placeholder='R$ 50,00'
-                value={text}
-                onChangeText={text => setText(text)}>
-                </TextInput>
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='hotel@gmail.com'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <Text style={styles.containerTextAlt}>
+                Senha
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
+                <TextInput
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='********'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <Text style={styles.containerTextAlt}>
+                Confirmar senha
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
+                <TextInput
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='********'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <SafeAreaView style={styles.continueButtonContainer}>
                 <Button
-                mode="text"
                 buttonColor='#904500'
-                textColor='#fff'
-                style={styles.continueButton}
+                style={{borderRadius: 4}}
                 labelStyle={styles.textContinueButton}
+                mode="contained"
                 onPress={() => navigation.navigate('RegisterHotel3')}>
                     Continuar
                 </Button>
-            </View>
-            <View pointerEvents='none' style={styles.containerBottom}>
-                <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}/>
-            </View>
-        </>
+            </SafeAreaView>
+            <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
+                <Image source={require('../../assets/images/screenBttmIntro.png')} style={styles.bottomImage}/>
+            </SafeAreaView>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        zIndex: 0,
+    containerMain: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        gap: 5,
-        alignItems: 'center',
         backgroundColor: '#d39C69',
-        paddingVertical: '10%',
     },
-    containerBottom: {
-        zIndex: 1,
-        position: 'absolute',
-        top: 540,
-        bottom: 0,
-        left: 0,
-        right: 0,
+    returnButton: {
+        marginRight: 285,
+        marginTop: 25,
+        left: 10,
     },
-    buttonReturn: {
-        right: '35.5%',
-    },
-    returnText: {
+    textReturnButton: {
         fontSize: 18,
+        color: '#000',
         fontWeight: 'bold',
         fontFamily: 'InterRegular',
         textDecorationLine: 'underline',
     },
-    mainText: {
-        right: '6%',
-        fontSize: 28,
-        fontFamily: 'InterRegular',
-        fontWeight: 'bold',
+    hotelIconView: {
+        paddingHorizontal: 100,
+        paddingTop: 25,
     },
-    inputLabelText: {
-        right: '13%',
-        width: '50%',
-        fontSize: 20,
+    hotelIcon: {
+        aspectRatio: 1,
+    },
+    containerText: {
+        paddingHorizontal: 50,
+        fontFamily: 'InterRegular',
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginVertical: 5,
+    },
+    containerTextAlt: {
+        paddingHorizontal: 50,
         fontFamily: 'InterRegular',
         fontWeight: '600',
-        textAlign: 'left',
+        fontSize: 20,
+    },
+    inputTextBox: {
+        paddingVertical: 5,
+        paddingLeft: 50,
+        paddingRight: 50,
     },
     textInput: {
-        width: '75%',
-        height: 50,
+        backgroundColor: '#fff',
+        fontFamily: 'InterRegular',
         fontSize: 20,
-        fontFamily: 'InterRegular',
-        fontWeight: '600',
-        backgroundColor: '#fff'
     },
-    textHotelRate: {
-        width: '70%',
-        fontSize: 25,
-        fontFamily: 'InterRegular',
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-    continueButton: {
-        width: '75%',
-        height: '6%',
-        top: '2%',
-        borderRadius: 5,
-        justifyContent: 'center',
+    continueButtonContainer: {
+        paddingVertical: 10,
+        paddingLeft: 50,
+        paddingRight: 50,
     },
     textContinueButton: {
-        fontSize: 20,
         fontFamily: 'InterRegular',
-        fontWeight: 'bold',
+        fontSize: 20,
+        fontWeight: 'bold'
     },
-    screenBottomImage: {
+    buttonRowContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 35,
+    },
+    textButtonRow: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        fontFamily: 'InterRegular',
+        textDecorationLine: 'underline',
+    },
+    bottomImageView: {
+        zIndex: -1,
         alignItems: 'center',
+        justifyContent: 'flex-end',
         width: '100%',
-        height: '125%',
+        height: '18%',
+    },
+    bottomImage: {
+        width: '100%',
+        height: '155%',
+        top: '95%',
     },
 })
 
-export default RegisterHotel2;
+export default LoginHotel;

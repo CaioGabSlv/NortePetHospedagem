@@ -75,6 +75,7 @@ const styles=StyleSheet.create({
         borderColor: '#904500',
     },
     sphereOn: {
+        aspectRatio: 1,
         backgroundColor: '#904500',
         width: '10%',
         height: '60%',
@@ -83,6 +84,7 @@ const styles=StyleSheet.create({
         borderColor: '#000',
     },
     sphereOff: {
+        aspectRatio: 1,
         backgroundColor: '#fff',
         width: '10%',
         height: '60%',

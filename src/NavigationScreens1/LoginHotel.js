@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, ImageBackground, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -7,162 +7,166 @@ const LoginHotel = ({ navigation }) => {
     const [text, setText] = useState("");
 
     return (
-        <>
-            <View style={styles.container}>
-                <Button
-                mode="text"
-                icon={'keyboard-backspace'}
-                textColor='#000'
-                style={styles.buttonReturn}
-                labelStyle={styles.returnText}
-                onPress={() => navigation.navigate('IntroScreen')}>
-                    Voltar
-                </Button>
-                <Image source={require('../../assets/images/logo-hotel.png')} style={styles.hotelImage}/>
-                <Text style={styles.mainText}>
-                    Entrar
-                </Text>
-                <Text style={styles.inputLabelText}>
-                    Email
-                </Text>
+        <View style={styles.containerMain}>
+            <Button
+            style={styles.returnButton}
+            labelStyle={styles.textReturnButton}
+            icon="keyboard-backspace"
+            mode="text"
+            onPress={() => navigation.navigate('IntroScreen3')}>
+                Voltar
+            </Button>
+            <View style={styles.hotelIconView}>
+                <Image source={require('../../assets/images/logoHotel.png')} style={styles.hotelIcon}/>
+            </View>
+            <Text style={styles.containerText}>
+                Login
+            </Text>
+            <Text style={styles.containerTextAlt}>
+                Email
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
                 <TextInput
-                underlineColor='#000'
-                activeUnderlineColor='#000'
-                outlineColor='#000'
-                textColor='#000'
-                style={styles.textInput}
-                placeholder='hotel@gmail.com'
-                value={text}
-                onChangeText={text => setText(text)}>
-                </TextInput>
-                <Text style={styles.inputLabelText}>
-                    Senha
-                </Text>
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='hotel@gmail.com'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <Text style={styles.containerTextAlt}>
+                Senha
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
                 <TextInput
-                underlineColor='#000'
-                activeUnderlineColor='#000'
-                outlineColor='#000'
-                textColor='#000'
-                style={styles.textInput}
-                placeholder='********'
-                value={text}
-                onChangeText={text => setText(text)}>
-                </TextInput>
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='********'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <SafeAreaView style={styles.continueButtonContainer}>
                 <Button
-                mode="text"
                 buttonColor='#904500'
-                textColor='#fff'
-                style={styles.loginButton}
-                labelStyle={styles.textLoginButton}
+                style={{borderRadius: 4}}
+                labelStyle={styles.textContinueButton}
+                icon="login"
+                mode="contained"
                 onPress={() => navigation.navigate('HomeHotel')}>
-                    Login
+                    Entrar
                 </Button>
-                <View style={styles.containerButtonsBottom}>
-                    <Button
-                    mode="text"
-                    textColor='#000'
-                    labelStyle={styles.textPasswordRecovery}
-                    onPress={() => navigation.navigate('PasswordRecovery')}>
-                        Esqueceu a senha?
-                    </Button>
-                    <Button
-                    mode="text"
-                    textColor='#000'
-                    labelStyle={styles.textPasswordRecovery}
-                    onPress={() => navigation.navigate('RegisterHotel')}>
-                        Criar uma conta
-                    </Button>
-                </View>
-            </View>
-            <View pointerEvents='none' style={styles.containerBottom}>
-                <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}/>
-            </View>
-        </>
+            </SafeAreaView>
+            <SafeAreaView style={styles.buttonRowContainer}>
+                <Button
+                labelStyle={styles.textButtonRow}
+                textColor='#000'
+                mode="text"
+                onPress={() => navigation.navigate('PasswordRecovery')}>
+                    Esqueçeu a senha?
+                </Button>
+                <Button
+                labelStyle={styles.textButtonRow}
+                textColor='#000'
+                mode="text"
+                onPress={() => navigation.navigate('RegisterHotel')}>
+                    Criar uma conta
+                </Button>
+            </SafeAreaView>
+            <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
+                <Image source={require('../../assets/images/screenBttmIntro.png')} style={styles.bottomImage}/>
+            </SafeAreaView>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        zIndex: 0,
+    containerMain: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        gap: 5,
-        alignItems: 'center',
         backgroundColor: '#d39C69',
-        paddingVertical: '10%',
     },
-    containerButtonsBottom: {
-        flexDirection: 'row',
-        top: '4%',
-        gap: 55,
+    returnButton: {
+        marginRight: 285,
+        marginTop: 25,
+        left: 10,
     },
-    containerBottom: {
-        zIndex: 1,
-        position: 'absolute',
-        top: 540,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        
-    },
-    buttonReturn: {
-        right: '35.5%',
-    },
-    returnText: {
+    textReturnButton: {
         fontSize: 18,
+        color: '#000',
         fontWeight: 'bold',
         fontFamily: 'InterRegular',
         textDecorationLine: 'underline',
     },
-    hotelImage: {
-        aspectRatio: 3/3,
-        width: '52%',
-        height: '30%',
+    hotelIconView: {
+        paddingHorizontal: 100,
+        paddingTop: 25,
     },
-    mainText: {
-        right: '27%',
-        fontSize: 30,
+    hotelIcon: {
+        aspectRatio: 1,
+    },
+    containerText: {
+        paddingHorizontal: 50,
         fontFamily: 'InterRegular',
+        fontSize: 30,
         fontWeight: 'bold',
+        marginVertical: 5,
     },
-    inputLabelText: {
-        right: '31%',
-        fontSize: 20,
+    containerTextAlt: {
+        paddingHorizontal: 50,
         fontFamily: 'InterRegular',
         fontWeight: '600',
+        fontSize: 20,
+    },
+    inputTextBox: {
+        paddingVertical: 5,
+        paddingLeft: 50,
+        paddingRight: 50,
     },
     textInput: {
-        width: '75%',
-        height: 50,
-        fontSize: 20,
+        backgroundColor: '#fff',
         fontFamily: 'InterRegular',
-        fontWeight: '600',
-        backgroundColor: '#fff'
+        fontSize: 20,
     },
-    loginButton: {
-        width: '75%',
-        height: '6%',
-        top: '2%',
-        borderRadius: 5,
+    continueButtonContainer: {
+        paddingVertical: 10,
+        paddingLeft: 50,
+        paddingRight: 50,
+    },
+    textContinueButton: {
+        fontFamily: 'InterRegular',
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    buttonRowContainer: {
+        flexDirection: 'row',
         justifyContent: 'center',
+        gap: 35,
     },
-    textLoginButton: {
-        fontSize: 20,
-        fontFamily: 'InterRegular',
-        fontWeight: 'bold',
-    },
-    textPasswordRecovery: {
+    textButtonRow: {
         fontSize: 14,
         fontWeight: 'bold',
         fontFamily: 'InterRegular',
         textDecorationLine: 'underline',
-        textAlign: 'left',
     },
-    screenBottomImage: {
+    bottomImageView: {
+        zIndex: -1,
         alignItems: 'center',
+        justifyContent: 'flex-end',
         width: '100%',
-        height: '125%',
+        height: '18%',
+    },
+    bottomImage: {
+        width: '100%',
+        height: '155%',
+        top: '60%',
     },
 })
 
