@@ -1,7 +1,6 @@
 import { View, StyleSheet, Image, Text, SafeAreaView } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
-import * as React from 'react'
-import { FontAwesome } from '@expo/vector-icons';
+import * as React from 'react';
 
 const Login = ({ navigation }) => {
 
@@ -32,14 +31,37 @@ const Login = ({ navigation }) => {
                 />
             </SafeAreaView>
             <SafeAreaView style={styles.buttonContainer}>
-            <Button
-            buttonColor='#904500'
-            icon="login"
-            mode="contained"
-            onPress={() => console.log('Pressed')}>
-                Continuar
-            </Button>
+                <Button
+                    buttonColor='#904500'
+                    mode="contained"
+                    onPress={() => console.log('Pressed')}>
+                    Continuar
+                </Button>
             </SafeAreaView>
+            <SafeAreaView style={styles.buttonRecoveryPassword}>
+                <Button
+                    textColor='black'
+                    mode="text"
+                    onPress={() => console.log('Pressed')}>
+                    Esqueceu a senha?
+                </Button>
+                <Button
+                    textColor='black'
+                    mode="text"
+                    onPress={() => console.log('Pressed')}>
+                    Criar uma conta
+                </Button>
+            </SafeAreaView>
+            <SafeAreaView style={styles.buttonCreateAccountHotel}>
+                <Button
+                    textColor='black'
+                    mode="text"
+                    onPress={() => navigation.navigate('RegisterHotel')}>
+                    Login para hotéis e cuidadores
+                </Button>
+            </SafeAreaView>
+            <Image source={require('../../assets/images/screenBttmIntro.png')} style={styles.pawImage}
+            />
         </View>
     );
 }
@@ -75,6 +97,20 @@ const styles = StyleSheet.create({
         paddingLeft: 50,
         paddingRight: 50,
         fontSize: 30,
+    },
+    buttonRecoveryPassword: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    buttonCreateAccountHotel: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    pawImage: {
+        aspectRatio: 1,
+        width: '100%',
+        height: '55%',
+        bottom: 130,
     },
 })
 

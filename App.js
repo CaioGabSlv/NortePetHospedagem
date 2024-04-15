@@ -39,7 +39,7 @@ export default function NortePetHospedagem() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
+      
       
         <Stack.Screen
           name="IntroScreen"
