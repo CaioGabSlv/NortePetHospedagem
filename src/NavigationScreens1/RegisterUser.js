@@ -81,7 +81,6 @@ const RegisterUser = ({ navigation }) => {
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
                     placeholder='Ex: Rua N°15, Bairro A'
-                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>

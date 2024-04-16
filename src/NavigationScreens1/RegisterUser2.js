@@ -32,6 +32,7 @@ const RegisterUser2 = ({ navigation }) => {
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
                     placeholder='Ex: (92) 99 025-6421'
+                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -64,7 +65,6 @@ const RegisterUser2 = ({ navigation }) => {
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
                     placeholder='********'
-                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -81,7 +81,6 @@ const RegisterUser2 = ({ navigation }) => {
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
                     placeholder='********'
-                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>

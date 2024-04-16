@@ -35,6 +35,7 @@ const RegisterHotelEmailConf = ({ navigation }) => {
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
                     placeholder='Ex: 123456'
+                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
