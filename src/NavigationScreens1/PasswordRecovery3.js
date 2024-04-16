@@ -2,56 +2,18 @@ import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
-const RegisterHotel2 = ({ navigation }) => {
+const PasswordRecovery3 = ({ navigation }) => {
 
     const [text, setText] = useState("");
 
     return (
         <View style={styles.containerMain}>
-            <Button
-            style={styles.returnButton}
-            labelStyle={styles.textReturnButton}
-            icon='keyboard-backspace'
-            mode='text'
-            onPress={() => navigation.navigate('RegisterHotel')}>
-                Voltar
-            </Button>
             <Text style={styles.containerText}>
-                Cadastro de Hotel
+                Recuperação de senha
             </Text>
-            <Text style={styles.containerTextAlt}>
-                Número de telefone
+            <Text style={styles.containerTextSub}>
+                Crie uma nova senha
             </Text>
-            <SafeAreaView style={styles.inputTextBox}>
-                <TextInput
-                    style={styles.textInput}
-                    outlineColor='#000'
-                    cursorColor='#000'
-                    selectionColor='#000'
-                    underlineColor='#000'
-                    activeUnderlineColor='#000'
-                    activeOutlineColor='#000'
-                    placeholder='Ex: (92)99 881-1010'
-                    keyboardType='number-pad'
-                    onChangeText={text => setText(text)}
-                />
-            </SafeAreaView>
-            <Text style={styles.containerTextAlt}>
-                Email
-            </Text>
-            <SafeAreaView style={styles.inputTextBox}>
-                <TextInput
-                    style={styles.textInput}
-                    outlineColor='#000'
-                    cursorColor='#000'
-                    selectionColor='#000'
-                    underlineColor='#000'
-                    activeUnderlineColor='#000'
-                    activeOutlineColor='#000'
-                    placeholder='Ex: hotel@gmail.com'
-                    onChangeText={text => setText(text)}
-                />
-            </SafeAreaView>
             <Text style={styles.containerTextAlt}>
                 Senha
             </Text>
@@ -89,9 +51,10 @@ const RegisterHotel2 = ({ navigation }) => {
                 buttonColor='#904500'
                 style={{borderRadius: 4}}
                 labelStyle={styles.textContinueButton}
+                icon="login"
                 mode="contained"
-                onPress={() => navigation.navigate('RegisterHotel3')}>
-                    Continuar
+                onPress={() => navigation.navigate('PasswordRecoveryCompl')}>
+                    Confirmar
                 </Button>
             </SafeAreaView>
             <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
@@ -104,19 +67,8 @@ const RegisterHotel2 = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
+        paddingTop: 84,
         backgroundColor: '#d39C69',
-    },
-    returnButton: {
-        marginRight: 285,
-        marginTop: 45,
-        left: 10,
-    },
-    textReturnButton: {
-        fontSize: 18,
-        color: '#000',
-        fontWeight: 'bold',
-        fontFamily: 'InterRegular',
-        textDecorationLine: 'underline',
     },
     containerText: {
         paddingHorizontal: 50,
@@ -124,6 +76,14 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         marginVertical: 5,
+    },
+    containerTextSub: {
+        paddingHorizontal: 50,
+        textAlign: 'center',
+        fontFamily: 'InterRegular',
+        fontSize: 25,
+        fontWeight: 'bold',
+        marginVertical: 20,
     },
     containerTextAlt: {
         paddingHorizontal: 50,
@@ -151,11 +111,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold'
     },
-    buttonRowContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        gap: 35,
-    },
     textButtonRow: {
         fontSize: 14,
         fontWeight: 'bold',
@@ -167,13 +122,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         width: '100%',
-        height: '25%',
+        height: '30%',
     },
     bottomImage: {
         width: '100%',
         height: '100%',
-        top: '45%',
+        top: '90%',
     },
 })
 
-export default RegisterHotel2;
+export default PasswordRecovery3;

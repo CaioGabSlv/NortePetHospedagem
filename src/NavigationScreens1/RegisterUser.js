@@ -2,7 +2,7 @@ import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
-const RegisterHotel2 = ({ navigation }) => {
+const RegisterUser = ({ navigation }) => {
 
     const [text, setText] = useState("");
 
@@ -13,14 +13,14 @@ const RegisterHotel2 = ({ navigation }) => {
             labelStyle={styles.textReturnButton}
             icon='keyboard-backspace'
             mode='text'
-            onPress={() => navigation.navigate('RegisterHotel')}>
+            onPress={() => navigation.navigate('Login')}>
                 Voltar
             </Button>
             <Text style={styles.containerText}>
-                Cadastro de Hotel
+                Cadastro de Usuário
             </Text>
             <Text style={styles.containerTextAlt}>
-                Número de telefone
+                Nome
             </Text>
             <SafeAreaView style={styles.inputTextBox}>
                 <TextInput
@@ -31,13 +31,45 @@ const RegisterHotel2 = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='Ex: (92)99 881-1010'
+                    placeholder='Ex: Felipe'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <Text style={styles.containerTextAlt}>
+                Sobrenome
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
+                <TextInput
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='Ex: Silva'
+                    onChangeText={text => setText(text)}
+                />
+            </SafeAreaView>
+            <Text style={styles.containerTextAlt}>
+                CPF
+            </Text>
+            <SafeAreaView style={styles.inputTextBox}>
+                <TextInput
+                    style={styles.textInput}
+                    outlineColor='#000'
+                    cursorColor='#000'
+                    selectionColor='#000'
+                    underlineColor='#000'
+                    activeUnderlineColor='#000'
+                    activeOutlineColor='#000'
+                    placeholder='Ex: 111.222.333-44'
                     keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
             <Text style={styles.containerTextAlt}>
-                Email
+                Endereço
             </Text>
             <SafeAreaView style={styles.inputTextBox}>
                 <TextInput
@@ -48,12 +80,13 @@ const RegisterHotel2 = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='Ex: hotel@gmail.com'
+                    placeholder='Ex: Rua N°15, Bairro A'
+                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
             <Text style={styles.containerTextAlt}>
-                Senha
+                Número de celular
             </Text>
             <SafeAreaView style={styles.inputTextBox}>
                 <TextInput
@@ -64,23 +97,8 @@ const RegisterHotel2 = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='********'
-                    onChangeText={text => setText(text)}
-                />
-            </SafeAreaView>
-            <Text style={styles.containerTextAlt}>
-                Confirmar senha
-            </Text>
-            <SafeAreaView style={styles.inputTextBox}>
-                <TextInput
-                    style={styles.textInput}
-                    outlineColor='#000'
-                    cursorColor='#000'
-                    selectionColor='#000'
-                    underlineColor='#000'
-                    activeUnderlineColor='#000'
-                    activeOutlineColor='#000'
-                    placeholder='********'
+                    placeholder='Ex: (92)99 772-3344'
+                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -90,7 +108,7 @@ const RegisterHotel2 = ({ navigation }) => {
                 style={{borderRadius: 4}}
                 labelStyle={styles.textContinueButton}
                 mode="contained"
-                onPress={() => navigation.navigate('RegisterHotel3')}>
+                onPress={() => navigation.navigate('RegisterUser2')}>
                     Continuar
                 </Button>
             </SafeAreaView>
@@ -172,8 +190,8 @@ const styles = StyleSheet.create({
     bottomImage: {
         width: '100%',
         height: '100%',
-        top: '45%',
+        top: '20%',
     },
 })
 
-export default RegisterHotel2;
+export default RegisterUser;

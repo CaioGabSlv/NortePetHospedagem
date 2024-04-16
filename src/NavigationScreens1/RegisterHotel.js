@@ -2,7 +2,7 @@ import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
-const LoginHotel = ({ navigation }) => {
+const RegisterHotel = ({ navigation }) => {
 
     const [text, setText] = useState("");
 
@@ -11,8 +11,8 @@ const LoginHotel = ({ navigation }) => {
             <Button
             style={styles.returnButton}
             labelStyle={styles.textReturnButton}
-            icon="keyboard-backspace"
-            mode="text"
+            icon='keyboard-backspace'
+            mode='text'
             onPress={() => navigation.navigate('LoginHotel')}>
                 Voltar
             </Button>
@@ -31,7 +31,7 @@ const LoginHotel = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='Hotel Pet'
+                    placeholder='Ex: Hotel Pet'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -47,7 +47,7 @@ const LoginHotel = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='Rua N°15, Bairro A'
+                    placeholder='Ex: Rua N°15, Bairro A'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -63,7 +63,8 @@ const LoginHotel = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='16'
+                    placeholder='Ex: 16'
+                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -79,7 +80,8 @@ const LoginHotel = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='69080-912'
+                    placeholder='Ex: 69080-912'
+                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -95,7 +97,8 @@ const LoginHotel = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='12.345.678/0001-00'
+                    placeholder='Ex: 12.345.678/0001-00'
+                    keyboardType='number-pad'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -123,7 +126,7 @@ const styles = StyleSheet.create({
     },
     returnButton: {
         marginRight: 285,
-        marginTop: 25,
+        marginTop: 45,
         left: 10,
     },
     textReturnButton: {
@@ -132,13 +135,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: 'InterRegular',
         textDecorationLine: 'underline',
-    },
-    hotelIconView: {
-        paddingHorizontal: 100,
-        paddingTop: 25,
-    },
-    hotelIcon: {
-        aspectRatio: 1,
     },
     containerText: {
         paddingHorizontal: 50,
@@ -189,13 +185,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         width: '100%',
-        height: '18%',
+        height: '25%',
     },
     bottomImage: {
         width: '100%',
-        height: '155%',
-        top: '55%',
+        height: '100%',
+        top: '20%',
     },
 })
 
-export default LoginHotel;
+export default RegisterHotel;

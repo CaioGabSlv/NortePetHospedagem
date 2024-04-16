@@ -1,10 +1,28 @@
 import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
-import { Button, TextInput } from 'react-native-paper';
+import { Button } from 'react-native-paper';
 import { useState } from 'react';
 
-const RegisterHotel3 = ({ navigation }) => {
+import ImageViewer from '../../components/ImageViewer';
+import * as ImagePicker from 'expo-image-picker';
 
-    const [text, setText] = useState("");
+const PlaceholderImage = require('../../assets/images/iconHotel.png');
+
+const RegisterHotel4 = ({ navigation }) => {
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const pickImageAsync = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+          allowsEditing: true,
+          quality: 1,
+        });
+        
+        if (!result.canceled) {
+          setSelectedImage(result.assets[0].uri);
+        } else {
+          alert('Você não selecionou nenhuma imagem');
+        };
+    }
 
     return (
         <View style={styles.containerMain}>
@@ -13,33 +31,35 @@ const RegisterHotel3 = ({ navigation }) => {
             labelStyle={styles.textReturnButton}
             icon='keyboard-backspace'
             mode='text'
-            onPress={() => navigation.navigate('RegisterHotel2')}>
+            onPress={() => navigation.navigate('RegisterHotel3')}>
                 Voltar
             </Button>
             <Text style={styles.containerText}>
                 Cadastro de Hotel
             </Text>
             <Text style={styles.containerTextSub}>
-                Qual o valor da diária do hotel?
+                Escolha uma imagem para apresentar seu hotel!
             </Text>
-            <SafeAreaView style={styles.buttonRowContainer}>
-                <Text style={styles.textMoney}>
-                    R$
-                </Text>
-                <SafeAreaView style={styles.inputTextBox}>
-                    <TextInput
-                        style={styles.textInput}
-                        outlineColor='#000'
-                        cursorColor='#000'
-                        selectionColor='#000'
-                        underlineColor='#000'
-                        activeUnderlineColor='#000'
-                        activeOutlineColor='#000'
-                        placeholder='Ex: 50,00 '
-                        keyboardType='number-pad'
-                        onChangeText={text => setText(text)}
+            <SafeAreaView style={styles.imageContainer}>
+                <SafeAreaView style={styles.imageContainer2}>
+                    <ImageViewer
+                    placeholderImageSource={PlaceholderImage}
+                    selectedImage={selectedImage}
+                    width={280}
+                    height={280}
+                    borderRadius={10}
                     />
                 </SafeAreaView>
+            </SafeAreaView>
+            <SafeAreaView style={styles.chooseImageButtonContainer}>
+                <Button
+                buttonColor='#904500'
+                style={{borderRadius: 4}}
+                labelStyle={styles.textContinueButton}
+                mode="contained"
+                onPress={pickImageAsync}>
+                    Escolher imagem
+                </Button>
             </SafeAreaView>
             <SafeAreaView style={styles.continueButtonContainer}>
                 <Button
@@ -47,7 +67,7 @@ const RegisterHotel3 = ({ navigation }) => {
                 style={{borderRadius: 4}}
                 labelStyle={styles.textContinueButton}
                 mode="contained"
-                onPress={() => navigation.navigate('RegisterHotel4')}>
+                onPress={() => navigation.navigate('RegisterHotel5')}>
                     Continuar
                 </Button>
             </SafeAreaView>
@@ -90,14 +110,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginVertical: 20,
     },
-    textMoney: {
-        paddingHorizontal: 5,
-        marginTop: 17,
-        fontFamily: 'InterRegular',
-        textAlign: 'center',
-        fontSize: 24,
-        fontWeight: 'bold',
-    },
     inputTextBox: {
         paddingVertical: 5,
         paddingLeft: 10,
@@ -107,6 +119,30 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         fontFamily: 'InterRegular',
         fontSize: 20,
+    },
+    imageContainer: {
+        aspectRatio: 1,
+        borderRadius: 10,
+        width: '40%',
+        height: '40%',
+        marginHorizontal: '6%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#500808'
+    },
+    imageContainer2: {
+        borderRadius: 10,
+        width: '90%',
+        height: '90%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#b27339'
+    },
+    chooseImageButtonContainer: {
+        marginTop: 15,
+        paddingVertical: 5,
+        paddingLeft: 50,
+        paddingRight: 50,
     },
     continueButtonContainer: {
         paddingVertical: 10,
@@ -118,11 +154,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold'
     },
-    buttonRowContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        gap: 0,
-    },
     bottomImageView: {
         zIndex: -1,
         alignItems: 'center',
@@ -133,8 +164,8 @@ const styles = StyleSheet.create({
     bottomImage: {
         width: '100%',
         height: '100%',
-        top: '140%',
+        top: '2.5%',
     },
 })
 
-export default RegisterHotel3;
+export default RegisterHotel4;

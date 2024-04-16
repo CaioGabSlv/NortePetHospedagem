@@ -11,9 +11,9 @@ const LoginHotel = ({ navigation }) => {
             <Button
             style={styles.returnButton}
             labelStyle={styles.textReturnButton}
-            icon="keyboard-backspace"
-            mode="text"
-            onPress={() => navigation.navigate('IntroScreen3')}>
+            icon='keyboard-backspace'
+            mode='text'
+            onPress={() => navigation.navigate('Login')}>
                 Voltar
             </Button>
             <View style={styles.hotelIconView}>
@@ -34,7 +34,7 @@ const LoginHotel = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='hotel@gmail.com'
+                    placeholder='Ex: hotel@gmail.com'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     },
     returnButton: {
         marginRight: 285,
-        marginTop: 25,
+        marginTop: 45,
         left: 10,
     },
     textReturnButton: {
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     hotelIconView: {
-        paddingHorizontal: 100,
+        paddingHorizontal: 105,
         paddingTop: 25,
     },
     hotelIcon: {
@@ -161,12 +161,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         width: '100%',
-        height: '18%',
+        height: '25%',
     },
     bottomImage: {
         width: '100%',
-        height: '155%',
-        top: '60%',
+        height: '100%',
+        top: '20%',
     },
 })
 
