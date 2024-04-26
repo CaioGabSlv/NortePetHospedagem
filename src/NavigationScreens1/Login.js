@@ -8,83 +8,88 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={styles.containerMain}>
-            <View style={styles.hotelIconView}>
-                <Image source={require('../../assets/images/logoClient.png')} style={styles.hotelIcon}/>
+            <View style={styles.containerHeader}>
+
             </View>
-            <Text style={styles.containerText}>
-                Login
-            </Text>
-            <Text style={styles.containerTextAlt}>
-                Email
-            </Text>
-            <SafeAreaView style={styles.inputTextBox}>
-                <TextInput
-                    style={styles.textInput}
-                    outlineColor='#000'
-                    cursorColor='#000'
-                    selectionColor='#000'
-                    underlineColor='#000'
-                    activeUnderlineColor='#000'
-                    activeOutlineColor='#000'
-                    placeholder='Ex: usuario@gmail.com'
-                    onChangeText={text => setText(text)}
-                />
-            </SafeAreaView>
-            <Text style={styles.containerTextAlt}>
-                Senha
-            </Text>
-            <SafeAreaView style={styles.inputTextBox}>
-                <TextInput
-                    style={styles.textInput}
-                    outlineColor='#000'
-                    cursorColor='#000'
-                    selectionColor='#000'
-                    underlineColor='#000'
-                    activeUnderlineColor='#000'
-                    activeOutlineColor='#000'
-                    placeholder='********'
-                    onChangeText={text => setText(text)}
-                />
-            </SafeAreaView>
-            <SafeAreaView style={styles.continueButtonContainer}>
-                <Button
-                buttonColor='#904500'
-                style={{borderRadius: 4}}
-                labelStyle={styles.textContinueButton}
-                icon="login"
-                mode="contained"
-                onPress={() => navigation.navigate('Home')}>
-                    Entrar
-                </Button>
-            </SafeAreaView>
-            <SafeAreaView style={styles.buttonRowContainer}>
-                <Button
-                labelStyle={styles.textButtonRow}
-                textColor='#000'
-                mode="text"
-                onPress={() => navigation.navigate('PasswordRecovery')}>
-                    Esqueçeu a senha?
-                </Button>
-                <Button
-                labelStyle={styles.textButtonRow}
-                textColor='#000'
-                mode="text"
-                onPress={() => navigation.navigate('RegisterUser')}>
-                    Criar uma conta
-                </Button>
-            </SafeAreaView>
-            <SafeAreaView style={styles.loginHotelButton}>
-                <Button
-                labelStyle={styles.textButtonRow}
-                textColor='#000'
-                mode="text"
-                onPress={() => navigation.navigate('LoginHotel')}>
-                    Login para hoteis e cuidadores
-                </Button>
-            </SafeAreaView>
-            <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
-                <Image source={require('../../assets/images/screenBttmIntro.png')} style={styles.bottomImage}/>
-            </SafeAreaView>
+            <View style={styles.containerMiddle}>
+                <View style={styles.userIconView}>
+                    <Image source={require('../../assets/images/logoClient.png')} style={styles.userIcon}/>
+                </View>
+                <Text style={styles.containerText}>
+                    Login
+                </Text>
+                <Text style={styles.containerTextAlt}>
+                    Email
+                </Text>
+                <SafeAreaView style={styles.inputTextBox}>
+                    <TextInput
+                        style={styles.textInput}
+                        outlineColor='#000'
+                        cursorColor='#000'
+                        selectionColor='#000'
+                        underlineColor='#000'
+                        activeUnderlineColor='#000'
+                        activeOutlineColor='#000'
+                        placeholder='Ex: usuario@gmail.com'
+                        onChangeText={text => setText(text)}
+                    />
+                </SafeAreaView>
+                <Text style={styles.containerTextAlt}>
+                    Senha
+                </Text>
+                <SafeAreaView style={styles.inputTextBox}>
+                    <TextInput
+                        style={styles.textInput}
+                        outlineColor='#000'
+                        cursorColor='#000'
+                        selectionColor='#000'
+                        underlineColor='#000'
+                        activeUnderlineColor='#000'
+                        activeOutlineColor='#000'
+                        placeholder='********'
+                        onChangeText={text => setText(text)}
+                    />
+                </SafeAreaView>
+                <SafeAreaView style={styles.continueButtonContainer}>
+                    <Button
+                    buttonColor='#904500'
+                    style={{borderRadius: 4}}
+                    labelStyle={styles.textContinueButton}
+                    icon="login"
+                    mode="contained"
+                    onPress={() => navigation.navigate('Home')}>
+                        Entrar
+                    </Button>
+                </SafeAreaView>
+                <SafeAreaView style={styles.buttonRowContainer}>
+                    <Button
+                    labelStyle={styles.textButtonRow}
+                    textColor='#000'
+                    mode="text"
+                    onPress={() => navigation.navigate('PasswordRecovery')}>
+                        Esqueçeu a senha?
+                    </Button>
+                    <Button
+                    labelStyle={styles.textButtonRow}
+                    textColor='#000'
+                    mode="text"
+                    onPress={() => navigation.navigate('RegisterUser')}>
+                        Criar uma conta
+                    </Button>
+                </SafeAreaView>
+                <SafeAreaView style={styles.loginHotelButton}>
+                    <Button
+                    labelStyle={styles.textButtonRow}
+                    textColor='#000'
+                    mode="text"
+                    onPress={() => navigation.navigate('LoginHotel')}>
+                        Login para hoteis e cuidadores
+                    </Button>
+                </SafeAreaView>
+            </View>
+            <View style={styles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.screenBottomImage}/>
+            </View>
         </View>
     );
 }
@@ -92,8 +97,21 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
-        paddingTop: 84,
-        backgroundColor: '#d39C69',
+    },
+    containerHeader: {
+        flex: 0.1,
+        alignItems: 'center',
+        backgroundColor: '#d39c69'
+    },
+    containerMiddle: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+    },
+    containerFooter: {
+        flex: 0.25,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
     },
     returnButton: {
         marginRight: 285,
@@ -107,11 +125,11 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         textDecorationLine: 'underline',
     },
-    hotelIconView: {
+    userIconView: {
         paddingHorizontal: 105,
-        paddingTop: 25,
+        paddingTop: 10,
     },
-    hotelIcon: {
+    userIcon: {
         aspectRatio: 1,
     },
     containerText: {
@@ -161,17 +179,10 @@ const styles = StyleSheet.create({
     loginHotelButton: {
         paddingHorizontal: 75,
     },
-    bottomImageView: {
-        zIndex: -1,
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        width: '100%',
-        height: '30%',
-    },
-    bottomImage: {
+    screenBottomImage: {
         width: '100%',
         height: '100%',
-        top: '0%',
+        resizeMode: 'stretch',
     },
 })
 

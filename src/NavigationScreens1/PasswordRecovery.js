@@ -34,7 +34,7 @@ const PasswordRecovery = ({ navigation }) => {
                     underlineColor='#000'
                     activeUnderlineColor='#000'
                     activeOutlineColor='#000'
-                    placeholder='Ex: email@gmail.com'
+                    placeholder='Ex: usuario@gmail.com'
                     onChangeText={text => setText(text)}
                 />
             </SafeAreaView>
@@ -49,7 +49,7 @@ const PasswordRecovery = ({ navigation }) => {
                 </Button>
             </SafeAreaView>
             <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
-                <Image source={require('../../assets/images/screenBttmIntro.png')} style={styles.bottomImage}/>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.bottomImage}/>
             </SafeAreaView>
         </View>
     );
@@ -59,10 +59,11 @@ const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
         backgroundColor: '#d39C69',
+        justifyContent: 'flex-end',
     },
     returnButton: {
         marginRight: 285,
-        marginTop: 45,
+        bottom: '12.5%',
         left: 10,
     },
     textReturnButton: {
@@ -114,16 +115,15 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     bottomImageView: {
-        zIndex: -1,
         alignItems: 'center',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         width: '100%',
-        height: '25%',
+        height: '20%',
     },
     bottomImage: {
         width: '100%',
         height: '100%',
-        top: '100%',
+        resizeMode: 'stretch',
     },
 })
 

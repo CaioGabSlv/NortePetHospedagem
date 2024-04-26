@@ -1,122 +1,46 @@
-import {View, StyleSheet, Image, ImageBackground, Text} from 'react-native';
+import {View, Image, Text} from 'react-native';
 import { Button } from 'react-native-paper';
+import IntroStyles from '../../components/IntroStyles';
 
 const IntroScreen = ({ navigation }) => {
     return (
-        <>
-            <View style={styles.containerMain}>
+        <View style={IntroStyles.containerMain}>
+            <View style={IntroStyles.containerHeader}>
                 <Button
                 mode='text'
                 buttonColor='#904500'
                 textColor='#fff'
-                style={styles.buttonSkip}
-                labelStyle={styles.textButton}
+                style={IntroStyles.buttonSkip}
+                labelStyle={IntroStyles.textButton}
                 onPress={() => navigation.navigate('Login')}>
                     Pular
                 </Button>
-                <View style={styles.topSphereContainer}>
-                    <View style={styles.sphereOn}/>
-                    <View style={styles.sphereOff}/>
-                    <View style={styles.sphereOff}/>
+                <View style={IntroStyles.topSphereContainer}>
+                    <View style={IntroStyles.sphereOn}/>
+                    <View style={IntroStyles.sphereOff}/>
+                    <View style={IntroStyles.sphereOff}/>
                 </View>
-                <Image source={require('../../assets/images/paw.png')} style={styles.pawImage}/>
-                <Text style={styles.text}>
+            </View>
+            <View style={IntroStyles.containerMiddle}>
+                <Image source={require('../../assets/images/paw.png')} style={IntroStyles.pawImage}/>
+                <Text style={IntroStyles.text}>
                     Aqui você encontra diversas opções de hospedagem para seu amiguinho de quatro patas
                 </Text>
             </View>
-            <View style={styles.containerBottom}>
-                <ImageBackground source={require('../../assets/images/screenBttmIntro.png')} style={styles.screenBottomImage}>
-                    <Button
+            <View style={IntroStyles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={IntroStyles.screenBottomImage}/>
+                <Button
                     mode='text'
                     buttonColor='#4e2500'
                     textColor='#fff'
-                    style={styles.buttonNext}
-                    labelStyle={styles.textButton}
+                    style={IntroStyles.buttonNext}
+                    labelStyle={IntroStyles.textButton}
                     onPress={() => navigation.navigate('IntroScreen2')}>
                         Próximo
-                    </Button>
-                </ImageBackground>
+                </Button>
             </View>
-        </>
+        </View>
     );
 }
-
-const styles=StyleSheet.create({
-    containerMain: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        gap: 5,
-        alignItems: 'center',
-        backgroundColor: '#d39C69',
-        paddingVertical: '10%',
-    },
-    containerBottom: {
-        flex: 0.25,
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        backgroundColor: '#d39C69',
-    },
-    buttonSkip: {
-        left: '37.5%',
-    },
-    buttonNext: {
-        width: '25%',
-        height: '20%',
-        left: '35%',
-        top: '75%',
-    },
-    textButton: {
-        fontSize: 18,
-        fontFamily: 'LeckerliOneRegular',
-    },
-    topSphereContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 40,
-        width: '60%',
-        height: '7%',
-        borderRadius: 10,
-        borderWidth: 3,
-        borderColor: '#904500',
-    },
-    sphereOn: {
-        aspectRatio: 1,
-        backgroundColor: '#904500',
-        width: '10%',
-        height: '60%',
-        borderRadius: 90,
-        borderWidth: 1,
-        borderColor: '#000',
-    },
-    sphereOff: {
-        aspectRatio: 1,
-        backgroundColor: '#fff',
-        width: '10%',
-        height: '60%',
-        borderRadius: 90,
-        borderWidth: 1,
-        borderColor: '#000',
-    },
-    pawImage: {
-        width: '70%',
-        height: '40%',
-        top: '5.5%',
-    },
-    text: {
-        fontSize: 28,
-        fontFamily: 'LeckerliOneRegular',
-        textAlign: 'center',
-        paddingHorizontal: '10%',
-        top: '6.5%',
-    },
-    screenBottomImage: {
-        alignItems: 'center',
-        width: '100%',
-        height: '125%',
-    },
-})
 
 export default IntroScreen;

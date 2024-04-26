@@ -82,7 +82,7 @@ const LoginHotel = ({ navigation }) => {
                 </Button>
             </SafeAreaView>
             <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
-                <Image source={require('../../assets/images/screenBttmIntro.png')} style={styles.bottomImage}/>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.bottomImage}/>
             </SafeAreaView>
         </View>
     );
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
         backgroundColor: '#d39C69',
+        justifyContent: 'flex-end'
     },
     returnButton: {
         marginRight: 285,
@@ -157,16 +158,15 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     bottomImageView: {
-        zIndex: -1,
         alignItems: 'center',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         width: '100%',
-        height: '25%',
+        height: '20%',
     },
     bottomImage: {
         width: '100%',
         height: '100%',
-        top: '20%',
+        resizeMode: 'stretch',
     },
 })
 

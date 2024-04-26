@@ -72,7 +72,7 @@ const RegisterHotel4 = ({ navigation }) => {
                 </Button>
             </SafeAreaView>
             <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
-                <Image source={require('../../assets/images/screenBttmIntro.png')} style={styles.bottomImage}/>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.bottomImage}/>
             </SafeAreaView>
         </View>
     );
@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     bottomImageView: {
-        zIndex: -1,
         alignItems: 'center',
         justifyContent: 'flex-end',
         width: '100%',
