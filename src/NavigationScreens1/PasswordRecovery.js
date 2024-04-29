@@ -8,49 +8,53 @@ const PasswordRecovery = ({ navigation }) => {
 
     return (
         <View style={styles.containerMain}>
-            <Button
-            style={styles.returnButton}
-            labelStyle={styles.textReturnButton}
-            icon='keyboard-backspace'
-            mode='text'
-            onPress={() => navigation.navigate('Login')}>
-                Voltar
-            </Button>
-            <Text style={styles.containerText}>
-                Recuperação de senha
-            </Text>
-            <Text style={styles.containerTextSub}>
-                Digite o seu endereço de email abaixo e lhe enviaremos as instruções para a recuperação de sua senha
-            </Text>
-            <Text style={styles.containerTextAlt}>
-                Email
-            </Text>
-            <SafeAreaView style={styles.inputTextBox}>
-                <TextInput
-                    style={styles.textInput}
-                    outlineColor='#000'
-                    cursorColor='#000'
-                    selectionColor='#000'
-                    underlineColor='#000'
-                    activeUnderlineColor='#000'
-                    activeOutlineColor='#000'
-                    placeholder='Ex: usuario@gmail.com'
-                    onChangeText={text => setText(text)}
-                />
-            </SafeAreaView>
-            <SafeAreaView style={styles.continueButtonContainer}>
+            <View style={styles.containerHeader}>
                 <Button
-                buttonColor='#904500'
-                style={{borderRadius: 4}}
-                labelStyle={styles.textContinueButton}
-                mode="contained"
-                onPress={() => navigation.navigate('PasswordRecovery2')}>
-                    Enviar
+                style={styles.returnButton}
+                labelStyle={styles.textReturnButton}
+                icon='keyboard-backspace'
+                mode='text'
+                onPress={() => navigation.navigate('Login')}>
+                    Voltar
                 </Button>
-            </SafeAreaView>
-            <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
-                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.bottomImage}/>
-            </SafeAreaView>
+            </View>
+            <View style={styles.containerMiddle}>
+                <Text style={styles.containerText}>
+                    Recuperação de senha
+                </Text>
+                <Text style={styles.containerTextSub}>
+                    Digite o seu endereço de email abaixo e lhe enviaremos as instruções para a recuperação de sua senha
+                </Text>
+                <Text style={styles.containerTextAlt}>
+                    Email
+                </Text>
+                <SafeAreaView style={styles.inputTextBox}>
+                    <TextInput
+                        style={styles.textInput}
+                        outlineColor='#000'
+                        cursorColor='#000'
+                        selectionColor='#000'
+                        underlineColor='#000'
+                        activeUnderlineColor='#000'
+                        activeOutlineColor='#000'
+                        placeholder='Ex: usuario@gmail.com'
+                        onChangeText={text => setText(text)}
+                    />
+                </SafeAreaView>
+                <SafeAreaView style={styles.continueButtonContainer}>
+                    <Button
+                    buttonColor='#904500'
+                    style={{borderRadius: 4}}
+                    labelStyle={styles.textContinueButton}
+                    mode="contained"
+                    onPress={() => navigation.navigate('PasswordRecovery2')}>
+                        Enviar
+                    </Button>
+                </SafeAreaView>
+            </View>
+            <View style={styles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.screenBottomImage}/>
+            </View>
         </View>
     );
 }
@@ -58,13 +62,26 @@ const PasswordRecovery = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
-        backgroundColor: '#d39C69',
-        justifyContent: 'flex-end',
+    },
+    containerHeader: {
+        flex: 0.25,
+        alignItems: 'center',
+        backgroundColor: '#d39c69'
+    },
+    containerMiddle: {
+        flex: 1,
+        gap: 5,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+    },
+    containerFooter: {
+        flex: 0.25,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
     },
     returnButton: {
-        marginRight: 285,
-        bottom: '12.5%',
-        left: 10,
+        marginTop: 55,
+        right: '35%',
     },
     textReturnButton: {
         fontSize: 18,
@@ -74,7 +91,8 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     containerText: {
-        paddingHorizontal: 50,
+        width: '80%',
+        textAlign: 'left',
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
@@ -89,15 +107,16 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     containerTextAlt: {
-        paddingHorizontal: 50,
+        width: '80%',
+        textAlign: 'left',
         fontFamily: 'InterRegular',
         fontWeight: '600',
         fontSize: 20,
     },
     inputTextBox: {
         paddingVertical: 5,
-        paddingLeft: 50,
-        paddingRight: 50,
+        width: '80%',
+        height: '10%',
     },
     textInput: {
         backgroundColor: '#fff',
@@ -105,22 +124,16 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     continueButtonContainer: {
-        paddingVertical: 10,
-        paddingLeft: 50,
-        paddingRight: 50,
+        top: '2.5%',
+        width: '80%',
+        height: '10%',
     },
     textContinueButton: {
         fontFamily: 'InterRegular',
         fontSize: 20,
         fontWeight: 'bold'
     },
-    bottomImageView: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '20%',
-    },
-    bottomImage: {
+    screenBottomImage: {
         width: '100%',
         height: '100%',
         resizeMode: 'stretch',

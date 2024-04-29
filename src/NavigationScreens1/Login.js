@@ -9,7 +9,6 @@ const Login = ({ navigation }) => {
     return (
         <View style={styles.containerMain}>
             <View style={styles.containerHeader}>
-
             </View>
             <View style={styles.containerMiddle}>
                 <View style={styles.userIconView}>
@@ -99,12 +98,13 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.1,
+        flex: 0.25,
         alignItems: 'center',
         backgroundColor: '#d39c69'
     },
     containerMiddle: {
         flex: 1,
+        gap: 5,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
@@ -112,18 +112,6 @@ const styles = StyleSheet.create({
         flex: 0.25,
         alignItems: 'center',
         backgroundColor: '#d39c69',
-    },
-    returnButton: {
-        marginRight: 285,
-        marginTop: 45,
-        left: 10,
-    },
-    textReturnButton: {
-        fontSize: 18,
-        color: '#000',
-        fontWeight: 'bold',
-        fontFamily: 'InterRegular',
-        textDecorationLine: 'underline',
     },
     userIconView: {
         paddingHorizontal: 105,
@@ -133,22 +121,24 @@ const styles = StyleSheet.create({
         aspectRatio: 1,
     },
     containerText: {
-        paddingHorizontal: 50,
+        width: '80%',
+        textAlign: 'left',
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
         marginVertical: 5,
     },
     containerTextAlt: {
-        paddingHorizontal: 50,
+        width: '80%',
+        textAlign: 'left',
         fontFamily: 'InterRegular',
         fontWeight: '600',
         fontSize: 20,
     },
     inputTextBox: {
         paddingVertical: 5,
-        paddingLeft: 50,
-        paddingRight: 50,
+        width: '80%',
+        height: '10%',
     },
     textInput: {
         backgroundColor: '#fff',
@@ -156,9 +146,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     continueButtonContainer: {
-        paddingVertical: 10,
-        paddingLeft: 50,
-        paddingRight: 50,
+        top: '2.5%',
+        width: '80%',
+        height: '10%',
     },
     textContinueButton: {
         fontFamily: 'InterRegular',
@@ -168,7 +158,7 @@ const styles = StyleSheet.create({
     buttonRowContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        gap: 35,
+        gap: 75,
     },
     textButtonRow: {
         fontSize: 14,

@@ -8,52 +8,56 @@ const RegisterHotel3 = ({ navigation }) => {
 
     return (
         <View style={styles.containerMain}>
-            <Button
-            style={styles.returnButton}
-            labelStyle={styles.textReturnButton}
-            icon='keyboard-backspace'
-            mode='text'
-            onPress={() => navigation.navigate('RegisterHotel2')}>
-                Voltar
-            </Button>
-            <Text style={styles.containerText}>
-                Cadastro de Hotel
-            </Text>
-            <Text style={styles.containerTextSub}>
-                Qual o valor da diária do hotel?
-            </Text>
-            <SafeAreaView style={styles.buttonRowContainer}>
-                <Text style={styles.textMoney}>
-                    R$
-                </Text>
-                <SafeAreaView style={styles.inputTextBox}>
-                    <TextInput
-                        style={styles.textInput}
-                        outlineColor='#000'
-                        cursorColor='#000'
-                        selectionColor='#000'
-                        underlineColor='#000'
-                        activeUnderlineColor='#000'
-                        activeOutlineColor='#000'
-                        placeholder='Ex: 50,00 '
-                        keyboardType='number-pad'
-                        onChangeText={text => setText(text)}
-                    />
-                </SafeAreaView>
-            </SafeAreaView>
-            <SafeAreaView style={styles.continueButtonContainer}>
+            <View style={styles.containerHeader}>
                 <Button
-                buttonColor='#904500'
-                style={{borderRadius: 4}}
-                labelStyle={styles.textContinueButton}
-                mode="contained"
-                onPress={() => navigation.navigate('RegisterHotel4')}>
-                    Continuar
+                style={styles.returnButton}
+                labelStyle={styles.textReturnButton}
+                icon='keyboard-backspace'
+                mode='text'
+                onPress={() => navigation.navigate('RegisterHotel2')}>
+                    Voltar
                 </Button>
-            </SafeAreaView>
-            <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
-                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.bottomImage}/>
-            </SafeAreaView>
+            </View>
+            <View style={styles.containerMiddle}>
+                <Text style={styles.containerText}>
+                    Cadastro de Hotel
+                </Text>
+                <Text style={styles.containerTextSub}>
+                    Qual o valor da diária do hotel?
+                </Text>
+                <SafeAreaView style={styles.buttonRowContainer}>
+                    <Text style={styles.textMoney}>
+                        R$
+                    </Text>
+                    <SafeAreaView style={styles.inputTextBox}>
+                        <TextInput
+                            style={styles.textInput}
+                            outlineColor='#000'
+                            cursorColor='#000'
+                            selectionColor='#000'
+                            underlineColor='#000'
+                            activeUnderlineColor='#000'
+                            activeOutlineColor='#000'
+                            placeholder='Ex: 50,00 '
+                            keyboardType='number-pad'
+                            onChangeText={text => setText(text)}
+                        />
+                    </SafeAreaView>
+                </SafeAreaView>
+                <SafeAreaView style={styles.continueButtonContainer}>
+                    <Button
+                    buttonColor='#904500'
+                    style={{borderRadius: 4}}
+                    labelStyle={styles.textContinueButton}
+                    mode="contained"
+                    onPress={() => navigation.navigate('RegisterHotel4')}>
+                        Continuar
+                    </Button>
+                </SafeAreaView>
+            </View>
+            <View style={styles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.screenBottomImage}/>
+            </View>
         </View>
     );
 }
@@ -61,12 +65,26 @@ const RegisterHotel3 = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
-        backgroundColor: '#d39C69',
+    },
+    containerHeader: {
+        flex: 0.15,
+        alignItems: 'center',
+        backgroundColor: '#d39c69'
+    },
+    containerMiddle: {
+        flex: 1,
+        gap: 5,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+    },
+    containerFooter: {
+        flex: 0.225,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
     },
     returnButton: {
-        marginRight: 285,
-        marginTop: 45,
-        left: 10,
+        marginTop: 55,
+        right: '35%',
     },
     textReturnButton: {
         fontSize: 18,
@@ -76,7 +94,8 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     containerText: {
-        paddingHorizontal: 50,
+        width: '80%',
+        textAlign: 'left',
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
@@ -91,7 +110,8 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     textMoney: {
-        paddingHorizontal: 5,
+        width: '15%',
+        right: '50%',
         marginTop: 17,
         fontFamily: 'InterRegular',
         textAlign: 'center',
@@ -100,8 +120,8 @@ const styles = StyleSheet.create({
     },
     inputTextBox: {
         paddingVertical: 5,
-        paddingLeft: 10,
-        paddingRight: 10,
+        width: '30%',
+        right: '50%',
     },
     textInput: {
         backgroundColor: '#fff',
@@ -109,9 +129,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     continueButtonContainer: {
-        paddingVertical: 10,
-        paddingLeft: 50,
-        paddingRight: 50,
+        top: '2.5%',
+        width: '80%',
+        height: '10%',
     },
     textContinueButton: {
         fontFamily: 'InterRegular',
@@ -121,18 +141,11 @@ const styles = StyleSheet.create({
     buttonRowContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        gap: 0,
     },
-    bottomImageView: {
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        width: '100%',
-        height: '25%',
-    },
-    bottomImage: {
+    screenBottomImage: {
         width: '100%',
         height: '100%',
-        top: '140%',
+        resizeMode: 'stretch',
     },
 })
 

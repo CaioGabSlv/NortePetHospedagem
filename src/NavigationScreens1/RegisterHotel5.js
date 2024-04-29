@@ -8,47 +8,51 @@ const RegisterHotel5 = ({ navigation }) => {
 
     return (
         <View style={styles.containerMain}>
-            <Button
-            style={styles.returnButton}
-            labelStyle={styles.textReturnButton}
-            icon='keyboard-backspace'
-            mode='text'
-            onPress={() => navigation.navigate('RegisterHotel4')}>
-                Voltar
-            </Button>
-            <Text style={styles.containerText}>
-                Cadastro de Hotel
-            </Text>
-            <Text style={styles.containerTextSub}>
-                Como descreveria o seu hotel para possíveis clientes?
-            </Text>
-            <SafeAreaView style={styles.imageContainer}>
-                <TextInput
-                    style={styles.textInput}
-                    outlineColor='#000'
-                    cursorColor='#000'
-                    selectionColor='#000'
-                    underlineColor='#000'
-                    activeUnderlineColor='#000'
-                    activeOutlineColor='#000'
-                    placeholder='Ex: Descrição de hotel'
-                    multiline={true}
-                    onChangeText={text => setText(text)}
-                />
-            </SafeAreaView>
-            <SafeAreaView style={styles.continueButtonContainer}>
+            <View style={styles.containerHeader}>
                 <Button
-                buttonColor='#904500'
-                style={{borderRadius: 4}}
-                labelStyle={styles.textContinueButton}
-                mode="contained"
-                onPress={() => navigation.navigate('RegisterHotelEmailConf')}>
-                    Continuar
+                style={styles.returnButton}
+                labelStyle={styles.textReturnButton}
+                icon='keyboard-backspace'
+                mode='text'
+                onPress={() => navigation.navigate('RegisterHotel4')}>
+                    Voltar
                 </Button>
-            </SafeAreaView>
-            <SafeAreaView pointerEvents='none' style={styles.bottomImageView}>
-                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.bottomImage}/>
-            </SafeAreaView>
+            </View>
+            <View style={styles.containerMiddle}>
+                <Text style={styles.containerText}>
+                    Cadastro de Hotel
+                </Text>
+                <Text style={styles.containerTextSub}>
+                    Como descreveria o seu hotel para possíveis clientes?
+                </Text>
+                <SafeAreaView style={styles.inputTextBox}>
+                    <TextInput
+                        style={styles.textInput}
+                        outlineColor='#000'
+                        cursorColor='#000'
+                        selectionColor='#000'
+                        underlineColor='#000'
+                        activeUnderlineColor='#000'
+                        activeOutlineColor='#000'
+                        placeholder='Ex: Descrição de hotel'
+                        multiline={true}
+                        onChangeText={text => setText(text)}
+                    />
+                </SafeAreaView>
+                <SafeAreaView style={styles.continueButtonContainer}>
+                    <Button
+                    buttonColor='#904500'
+                    style={{borderRadius: 4}}
+                    labelStyle={styles.textContinueButton}
+                    mode="contained"
+                    onPress={() => navigation.navigate('RegisterHotelEmailConf')}>
+                        Continuar
+                    </Button>
+                </SafeAreaView>
+            </View>
+            <View style={styles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.screenBottomImage}/>
+            </View>
         </View>
     );
 }
@@ -56,12 +60,26 @@ const RegisterHotel5 = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
-        backgroundColor: '#d39C69',
+    },
+    containerHeader: {
+        flex: 0.15,
+        alignItems: 'center',
+        backgroundColor: '#d39c69'
+    },
+    containerMiddle: {
+        flex: 1,
+        gap: 5,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+    },
+    containerFooter: {
+        flex: 0.225,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
     },
     returnButton: {
-        marginRight: 285,
-        marginTop: 45,
-        left: 10,
+        marginTop: 55,
+        right: '35%',
     },
     textReturnButton: {
         fontSize: 18,
@@ -71,14 +89,15 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     containerText: {
-        paddingHorizontal: 50,
+        width: '80%',
+        textAlign: 'left',
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
         marginVertical: 5,
     },
     containerTextSub: {
-        paddingHorizontal: 50,
+        paddingHorizontal: 25,
         textAlign: 'center',
         fontFamily: 'InterRegular',
         fontSize: 25,
@@ -86,47 +105,39 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     inputTextBox: {
-        paddingVertical: 5,
-        paddingLeft: 10,
-        paddingRight: 10,
-    },
-    textInput: {
-        width: '100%',
-        textAlign: 'left',
-        fontFamily: 'InterRegular',
-        fontSize: 20,
-        backgroundColor: '#efefef',
-    },
-    imageContainer: {
         aspectRatio: 1,
-        marginHorizontal: 20,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
+        width: '51%',
+        height: '51%',
         borderRadius: 10,
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: '#fff'
     },
+    textInput: {
+        width: '95%',
+        textAlign: 'left',
+        fontFamily: 'InterRegular',
+        fontSize: 20,
+        backgroundColor: '#efefef',
+    },
     continueButtonContainer: {
-        paddingVertical: 10,
-        paddingLeft: 50,
-        paddingRight: 50,
+        top: '2.5%',
+        width: '80%',
+        height: '10%',
     },
     textContinueButton: {
         fontFamily: 'InterRegular',
         fontSize: 20,
         fontWeight: 'bold'
     },
-    bottomImageView: {
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        width: '100%',
-        height: '25%',
+    buttonRowContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
     },
-    bottomImage: {
+    screenBottomImage: {
         width: '100%',
         height: '100%',
-        top: '2.5%',
+        resizeMode: 'stretch',
     },
 })
 
