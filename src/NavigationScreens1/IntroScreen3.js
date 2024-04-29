@@ -1,6 +1,6 @@
 import {View, Image, Text} from 'react-native';
 import { Button } from 'react-native-paper';
-import IntroStyles from '../../components/IntroStyles';
+import IntroStyles from '../../components/styles/IntroStyles';
 
 const IntroScreen = ({ navigation }) => {
     return (
