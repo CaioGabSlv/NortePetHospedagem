@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
+import {View, SafeAreaView, Image, Text} from 'react-native';
 import { Button } from 'react-native-paper';
 import { useState } from 'react';
 import RegisterComplStyles from '../../components/styles/RegisterComplStyles';
