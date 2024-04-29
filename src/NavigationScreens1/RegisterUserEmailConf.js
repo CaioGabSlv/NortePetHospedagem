@@ -1,29 +1,29 @@
 import {View, SafeAreaView, Image, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
-import RegisterUserStyles from '../../components/styles/RegisterUserStyles';
+import PasswordRecStyles from '../../components/styles/PasswordRecStyles';
 
 const RegisterUserEmailConf = ({ navigation }) => {
 
     const [text, setText] = useState("");
 
     return (
-        <View style={RegisterUserStyles.containerMain}>
-            <View style={RegisterUserStyles.containerHeader}>
+        <View style={PasswordRecStyles.containerMain}>
+            <View style={PasswordRecStyles.containerHeader}>
             </View>
-            <View style={RegisterUserStyles.containerMiddle}>
-                <Text style={RegisterUserStyles.containerText}>
+            <View style={PasswordRecStyles.containerMiddle}>
+                <Text style={PasswordRecStyles.containerText}>
                     Cadastro de Usuário
                 </Text>
-                <Text style={RegisterUserStyles.containerTextSub}>
+                <Text style={PasswordRecStyles.containerTextSub}>
                     Digite o código enviado ao seu email para ativar sua conta
                 </Text>
-                <Text style={RegisterUserStyles.containerTextAlt}>
+                <Text style={PasswordRecStyles.containerTextAlt}>
                     Código
                 </Text>
-                <SafeAreaView style={RegisterUserStyles.inputTextBox}>
+                <SafeAreaView style={PasswordRecStyles.inputTextBox}>
                     <TextInput
-                        style={RegisterUserStyles.textInput}
+                        style={PasswordRecStyles.textInput}
                         outlineColor='#000'
                         cursorColor='#000'
                         selectionColor='#000'
@@ -36,19 +36,19 @@ const RegisterUserEmailConf = ({ navigation }) => {
                         onChangeText={text => setText(text)}
                     />
                 </SafeAreaView>
-                <SafeAreaView style={RegisterUserStyles.continueButtonContainer}>
+                <SafeAreaView style={PasswordRecStyles.continueButtonContainer}>
                     <Button
                     buttonColor='#904500'
                     style={{borderRadius: 4}}
-                    labelStyle={RegisterUserStyles.textContinueButton}
+                    labelStyle={PasswordRecStyles.textContinueButton}
                     mode="contained"
                     onPress={() => navigation.navigate('RegisterCompleted')}>
                         Confirmar Código
                     </Button>
                 </SafeAreaView>
             </View>
-            <View style={RegisterUserStyles.containerFooter}>
-                <Image source={require('../../assets/images/screenBottomIntro.png')} style={RegisterUserStyles.screenBottomImage}/>
+            <View style={PasswordRecStyles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={PasswordRecStyles.screenBottomImage}/>
             </View>
         </View>
     );
