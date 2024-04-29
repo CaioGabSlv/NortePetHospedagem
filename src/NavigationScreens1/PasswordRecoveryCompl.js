@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -22,6 +22,7 @@ const PasswordRecoveryCompl = ({ navigation }) => {
                     buttonColor='#904500'
                     style={{borderRadius: 4}}
                     labelStyle={styles.textLoginButton}
+                    icon="login"
                     mode="contained"
                     onPress={() => navigation.navigate('Login')}>
                         Voltar à tela de login
@@ -40,15 +41,17 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.25,
+        flex: 0.1,
         alignItems: 'center',
-        backgroundColor: '#d39c69'
+        backgroundColor: '#d39c69',
+        paddingTop: StatusBar.currentHeight,
     },
     containerMiddle: {
-        flex: 1,
+        flex: 0.8,
         gap: 5,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        zIndex: 1,
     },
     containerFooter: {
         flex: 0.25,

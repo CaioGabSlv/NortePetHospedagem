@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -34,7 +34,8 @@ const RegisterHotel = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
-                        placeholder='Ex: Hotel Pet'
+                        placeholderTextColor={'#bbb'}
+                        placeholder='Ex: Hotel Pets'
                         onChangeText={text => setText(text)}
                     />
                 </SafeAreaView>
@@ -50,6 +51,7 @@ const RegisterHotel = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: Rua N°15, Bairro A'
                         onChangeText={text => setText(text)}
                     />
@@ -66,6 +68,7 @@ const RegisterHotel = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: 16'
                         keyboardType='number-pad'
                         onChangeText={text => setText(text)}
@@ -83,6 +86,7 @@ const RegisterHotel = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: 69080-912'
                         keyboardType='number-pad'
                         onChangeText={text => setText(text)}
@@ -100,6 +104,7 @@ const RegisterHotel = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: 12.345.678/0001-00'
                         keyboardType='number-pad'
                         onChangeText={text => setText(text)}
@@ -128,23 +133,25 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.15,
-        alignItems: 'center',
-        backgroundColor: '#d39c69'
-    },
-    containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.1,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        paddingTop: StatusBar.currentHeight,
+    },
+    containerMiddle: {
+        flex: 0.8,
+        gap: 2,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+        zIndex: 1,
     },
     containerFooter: {
-        flex: 0.225,
+        flex: 0.15,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     returnButton: {
-        marginTop: 55,
+        marginTop: '4%',
         right: '35%',
     },
     textReturnButton: {
@@ -160,7 +167,6 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
-        marginVertical: 5,
     },
     containerTextAlt: {
         width: '80%',
@@ -170,7 +176,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     inputTextBox: {
-        paddingVertical: 5,
         width: '80%',
         height: '10%',
     },

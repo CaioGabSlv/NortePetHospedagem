@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -34,6 +34,7 @@ const RegisterHotel5 = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: Descrição de hotel'
                         multiline={true}
                         onChangeText={text => setText(text)}
@@ -62,23 +63,25 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.15,
-        alignItems: 'center',
-        backgroundColor: '#d39c69'
-    },
-    containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.1,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        paddingTop: StatusBar.currentHeight,
+    },
+    containerMiddle: {
+        flex: 0.8,
+        gap: 2,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+        zIndex: 1,
     },
     containerFooter: {
-        flex: 0.225,
+        flex: 0.15,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     returnButton: {
-        marginTop: 55,
+        marginTop: '4%',
         right: '35%',
     },
     textReturnButton: {
@@ -94,20 +97,19 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
-        marginVertical: 5,
     },
     containerTextSub: {
-        paddingHorizontal: 25,
+        paddingHorizontal: '5%',
         textAlign: 'center',
         fontFamily: 'InterRegular',
         fontSize: 25,
         fontWeight: 'bold',
-        marginVertical: 20,
+        marginVertical: '5%',
     },
     inputTextBox: {
         aspectRatio: 1,
-        width: '51%',
-        height: '51%',
+        width: '55%',
+        height: '55%',
         borderRadius: 10,
         flexDirection: 'row',
         justifyContent: 'center',

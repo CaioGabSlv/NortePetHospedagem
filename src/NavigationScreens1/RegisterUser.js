@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -34,6 +34,7 @@ const RegisterUser = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: Felipe'
                         onChangeText={text => setText(text)}
                     />
@@ -50,6 +51,7 @@ const RegisterUser = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: Silva'
                         onChangeText={text => setText(text)}
                     />
@@ -66,6 +68,7 @@ const RegisterUser = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: 111.222.333-44'
                         keyboardType='number-pad'
                         onChangeText={text => setText(text)}
@@ -83,6 +86,7 @@ const RegisterUser = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: Rua N°15, Bairro A'
                         onChangeText={text => setText(text)}
                     />
@@ -99,7 +103,8 @@ const RegisterUser = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
-                        placeholder='Ex: (92)99 772-3344'
+                        placeholderTextColor={'#bbb'}
+                        placeholder='Ex: (92) 99 772-3344'
                         keyboardType='number-pad'
                         onChangeText={text => setText(text)}
                     />
@@ -127,23 +132,25 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.15,
+        flex: 0.1,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        paddingTop: StatusBar.currentHeight,
     },
     containerMiddle: {
         flex: 0.8,
         gap: 2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        zIndex: 1,
     },
     containerFooter: {
-        flex: 0.2,
+        flex: 0.15,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     returnButton: {
-        marginTop: 55,
+        marginTop: '4%',
         right: '35%',
     },
     textReturnButton: {

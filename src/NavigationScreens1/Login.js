@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -29,6 +29,7 @@ const Login = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='Ex: usuario@gmail.com'
                         onChangeText={text => setText(text)}
                     />
@@ -45,6 +46,7 @@ const Login = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='********'
                         onChangeText={text => setText(text)}
                     />
@@ -96,12 +98,12 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
-        justifyContent: 'flex-end',
     },
     containerHeader: {
-        flex: 0.15,
+        flex: 0.1,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        paddingTop: StatusBar.currentHeight,
     },
     containerMiddle: {
         flex: 0.8,
@@ -111,7 +113,7 @@ const styles = StyleSheet.create({
         zIndex: 1,
     },
     containerFooter: {
-        flex: 0.2,
+        flex: 0.25,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
@@ -155,6 +157,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     buttonRowContainer: {
+        marginVertical: '1%',
         flexDirection: 'row',
         justifyContent: 'center',
         gap: 60,

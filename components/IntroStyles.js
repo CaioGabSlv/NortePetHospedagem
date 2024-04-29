@@ -5,9 +5,9 @@ const IntroStyles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.15,
+        flex: 0.175,
         alignItems: 'center',
-        backgroundColor: '#a39c69',
+        backgroundColor: '#d39c69',
         paddingTop: StatusBar.currentHeight,
     },
     containerMiddle: {
@@ -16,12 +16,14 @@ const IntroStyles = StyleSheet.create({
         backgroundColor: '#d39c69',
     },
     containerFooter: {
-        flex: 0.2,
+        flex: 0.275,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     buttonSkip: {
-        top: '30%',
+        width: '20%',
+        height: '35%',
+        top: '20%',
         left: '37.5%',
     },
     textButton: {
@@ -29,14 +31,13 @@ const IntroStyles = StyleSheet.create({
         fontFamily: 'LeckerliOneRegular',
     },
     topSphereContainer: {
-        position: 'absolute',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         gap: 40,
-        top: '30%',
+        top: '6.5%',
         width: '50%',
-        height: '30%',
+        height: '40%',
         borderRadius: 10,
         borderWidth: 3,
         borderColor: '#904500',

@@ -6,6 +6,7 @@ const IntroScreen = ({ navigation }) => {
     return (
         <View style={IntroStyles.containerMain}>
             <View style={IntroStyles.containerHeader}>
+                <Button/>
                 <View style={IntroStyles.topSphereContainer}>
                     <View style={IntroStyles.sphereOff}/>
                     <View style={IntroStyles.sphereOn}/>

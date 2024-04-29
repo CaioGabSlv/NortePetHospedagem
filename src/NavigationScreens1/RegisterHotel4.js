@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
 import { Button } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -87,23 +87,25 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.15,
-        alignItems: 'center',
-        backgroundColor: '#d39c69'
-    },
-    containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.1,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        paddingTop: StatusBar.currentHeight,
+    },
+    containerMiddle: {
+        flex: 0.8,
+        gap: 2,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+        zIndex: 1,
     },
     containerFooter: {
-        flex: 0.225,
+        flex: 0.15,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     returnButton: {
-        marginTop: 55,
+        marginTop: '4%',
         right: '35%',
     },
     textReturnButton: {
@@ -119,15 +121,14 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
-        marginVertical: 5,
     },
     containerTextSub: {
-        paddingHorizontal: 50,
+        paddingHorizontal: '10%',
         textAlign: 'center',
         fontFamily: 'InterRegular',
         fontSize: 25,
         fontWeight: 'bold',
-        marginVertical: 20,
+        marginVertical: '5%',
     },
     imageContainer: {
         aspectRatio: 1,
@@ -152,13 +153,14 @@ const styles = StyleSheet.create({
         height: '10%',
     },
     continueButtonContainer: {
+        top: '1%',
         width: '80%',
         height: '10%',
     },
     textContinueButton: {
         fontFamily: 'InterRegular',
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     screenBottomImage: {
         width: '100%',

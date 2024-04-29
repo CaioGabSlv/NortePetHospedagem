@@ -1,4 +1,4 @@
-import {View, SafeAreaView, StyleSheet, Image, Text} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
 
@@ -29,6 +29,7 @@ const PasswordRecovery3 = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='********'
                         onChangeText={text => setText(text)}
                     />
@@ -45,6 +46,7 @@ const PasswordRecovery3 = ({ navigation }) => {
                         underlineColor='#000'
                         activeUnderlineColor='#000'
                         activeOutlineColor='#000'
+                        placeholderTextColor={'#bbb'}
                         placeholder='********'
                         onChangeText={text => setText(text)}
                     />
@@ -54,7 +56,6 @@ const PasswordRecovery3 = ({ navigation }) => {
                     buttonColor='#904500'
                     style={{borderRadius: 4}}
                     labelStyle={styles.textContinueButton}
-                    icon="login"
                     mode="contained"
                     onPress={() => navigation.navigate('PasswordRecoveryCompl')}>
                         Confirmar
@@ -73,15 +74,17 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerHeader: {
-        flex: 0.25,
-        alignItems: 'center',
-        backgroundColor: '#d39c69'
-    },
-    containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.1,
         alignItems: 'center',
         backgroundColor: '#d39c69',
+        paddingTop: StatusBar.currentHeight,
+    },
+    containerMiddle: {
+        flex: 0.8,
+        gap: 2,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+        zIndex: 1,
     },
     containerFooter: {
         flex: 0.25,
@@ -94,15 +97,14 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
-        marginVertical: 5,
     },
     containerTextSub: {
-        paddingHorizontal: 35,
+        paddingHorizontal: '10%',
         textAlign: 'center',
         fontFamily: 'InterRegular',
         fontSize: 25,
         fontWeight: 'bold',
-        marginVertical: 20,
+        marginVertical: '5%',
     },
     containerTextAlt: {
         width: '80%',
@@ -112,7 +114,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     inputTextBox: {
-        paddingVertical: 5,
         width: '80%',
         height: '10%',
     },
