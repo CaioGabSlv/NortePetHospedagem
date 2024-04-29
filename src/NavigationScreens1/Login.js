@@ -76,13 +76,13 @@ const Login = ({ navigation }) => {
                         Criar uma conta
                     </Button>
                 </SafeAreaView>
-                <SafeAreaView style={styles.loginHotelButton}>
+                <SafeAreaView>
                     <Button
                     labelStyle={styles.textButtonRow}
                     textColor='#000'
                     mode="text"
                     onPress={() => navigation.navigate('LoginHotel')}>
-                        Login para hoteis e cuidadores
+                        Login para hotéis e cuidadores
                     </Button>
                 </SafeAreaView>
             </View>
@@ -96,26 +96,27 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
+        justifyContent: 'flex-end',
     },
     containerHeader: {
-        flex: 0.25,
-        alignItems: 'center',
-        backgroundColor: '#d39c69'
-    },
-    containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.15,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
+    containerMiddle: {
+        flex: 0.8,
+        gap: 2,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+        zIndex: 1,
+    },
     containerFooter: {
-        flex: 0.25,
+        flex: 0.2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     userIconView: {
-        paddingHorizontal: 105,
-        paddingTop: 10,
+        paddingHorizontal: '50%',
     },
     userIcon: {
         aspectRatio: 1,
@@ -126,7 +127,6 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
-        marginVertical: 5,
     },
     containerTextAlt: {
         width: '80%',
@@ -136,7 +136,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     inputTextBox: {
-        paddingVertical: 5,
         width: '80%',
         height: '10%',
     },
@@ -158,16 +157,13 @@ const styles = StyleSheet.create({
     buttonRowContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        gap: 75,
+        gap: 60,
     },
     textButtonRow: {
         fontSize: 14,
         fontWeight: 'bold',
         fontFamily: 'InterRegular',
         textDecorationLine: 'underline',
-    },
-    loginHotelButton: {
-        paddingHorizontal: 75,
     },
     screenBottomImage: {
         width: '100%',

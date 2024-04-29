@@ -95,20 +95,22 @@ const LoginHotel = ({ navigation }) => {
 const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
+        justifyContent: 'flex-end',
     },
     containerHeader: {
-        flex: 0.25,
-        alignItems: 'center',
-        backgroundColor: '#d39c69'
-    },
-    containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.15,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
+    containerMiddle: {
+        flex: 0.8,
+        gap: 2,
+        alignItems: 'center',
+        backgroundColor: '#d39c69',
+        zIndex: 1,
+    },
     containerFooter: {
-        flex: 0.25,
+        flex: 0.2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
@@ -124,8 +126,7 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     hotelIconView: {
-        paddingHorizontal: 105,
-        paddingTop: 10,
+        paddingHorizontal: '50%',
     },
     hotelIcon: {
         aspectRatio: 1,
@@ -136,7 +137,6 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
-        marginVertical: 5,
     },
     containerTextAlt: {
         width: '80%',
@@ -146,7 +146,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     inputTextBox: {
-        paddingVertical: 5,
         width: '80%',
         height: '10%',
     },
@@ -168,7 +167,7 @@ const styles = StyleSheet.create({
     buttonRowContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        gap: 75,
+        gap: 60,
     },
     textButtonRow: {
         fontSize: 14,

@@ -129,16 +129,16 @@ const styles = StyleSheet.create({
     containerHeader: {
         flex: 0.15,
         alignItems: 'center',
-        backgroundColor: '#d39c69'
+        backgroundColor: '#d39c69',
     },
     containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.8,
+        gap: 2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     containerFooter: {
-        flex: 0.225,
+        flex: 0.2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
@@ -159,7 +159,6 @@ const styles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 30,
         fontWeight: 'bold',
-        marginVertical: 5,
     },
     containerTextAlt: {
         width: '80%',
@@ -169,7 +168,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     inputTextBox: {
-        paddingVertical: 5,
         width: '80%',
         height: '10%',
     },

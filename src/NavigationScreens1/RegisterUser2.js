@@ -95,16 +95,16 @@ const styles = StyleSheet.create({
     containerHeader: {
         flex: 0.15,
         alignItems: 'center',
-        backgroundColor: '#d39c69'
+        backgroundColor: '#d39c69',
     },
     containerMiddle: {
-        flex: 1,
-        gap: 5,
+        flex: 0.8,
+        gap: 2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     containerFooter: {
-        flex: 0.225,
+        flex: 0.2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },

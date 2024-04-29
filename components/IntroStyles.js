@@ -1,21 +1,22 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 
 const IntroStyles = StyleSheet.create({
     containerMain: {
         flex: 1,
     },
     containerHeader: {
-        flex: 0.25,
+        flex: 0.15,
         alignItems: 'center',
-        backgroundColor: '#d39c69'
+        backgroundColor: '#a39c69',
+        paddingTop: StatusBar.currentHeight,
     },
     containerMiddle: {
-        flex: 1,
+        flex: 0.8,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
     containerFooter: {
-        flex: 0.25,
+        flex: 0.2,
         alignItems: 'center',
         backgroundColor: '#d39c69',
     },
@@ -33,8 +34,8 @@ const IntroStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         gap: 40,
-        top: '65.5%',
-        width: '60%',
+        top: '30%',
+        width: '50%',
         height: '30%',
         borderRadius: 10,
         borderWidth: 3,
