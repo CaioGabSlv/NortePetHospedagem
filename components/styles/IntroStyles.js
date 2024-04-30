@@ -22,7 +22,7 @@ const IntroStyles = StyleSheet.create({
     },
     buttonSkip: {
         width: '20%',
-        height: '35%',
+        height: '30%',
         top: '20%',
         left: '37.5%',
     },

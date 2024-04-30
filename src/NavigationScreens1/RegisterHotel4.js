@@ -1,6 +1,7 @@
-import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
+import {View, SafeAreaView, Image, Text} from 'react-native';
 import { Button } from 'react-native-paper';
 import { useState } from 'react';
+import RegisterHotelStyles from '../../components/styles/RegisterHotelStyles';
 
 import ImageViewer from '../../components/ImageViewer';
 import * as ImagePicker from 'expo-image-picker';
@@ -25,26 +26,26 @@ const RegisterHotel4 = ({ navigation }) => {
     }
 
     return (
-        <View style={styles.containerMain}>
-            <View style={styles.containerHeader}>
+        <View style={RegisterHotelStyles.containerMain}>
+            <View style={RegisterHotelStyles.containerHeader}>
                 <Button
-                style={styles.returnButton}
-                labelStyle={styles.textReturnButton}
+                style={RegisterHotelStyles.returnButton}
+                labelStyle={RegisterHotelStyles.textReturnButton}
                 icon='keyboard-backspace'
                 mode='text'
                 onPress={() => navigation.navigate('RegisterHotel3')}>
                     Voltar
                 </Button>
             </View>
-            <View style={styles.containerMiddle}>
-                <Text style={styles.containerText}>
+            <View style={RegisterHotelStyles.containerMiddle}>
+                <Text style={RegisterHotelStyles.containerText}>
                     Cadastro de Hotel
                 </Text>
-                <Text style={styles.containerTextSub}>
+                <Text style={RegisterHotelStyles.containerTextSub}>
                     Escolha uma imagem para apresentar seu hotel!
                 </Text>
-                <SafeAreaView style={styles.imageContainer}>
-                    <SafeAreaView style={styles.imageContainer2}>
+                <SafeAreaView style={RegisterHotelStyles.imageContainer}>
+                    <SafeAreaView style={RegisterHotelStyles.imageContainer2}>
                         <ImageViewer
                         placeholderImageSource={PlaceholderImage}
                         selectedImage={selectedImage}
@@ -54,119 +55,32 @@ const RegisterHotel4 = ({ navigation }) => {
                         />
                     </SafeAreaView>
                 </SafeAreaView>
-                <SafeAreaView style={styles.chooseImageButtonContainer}>
+                <SafeAreaView style={RegisterHotelStyles.chooseImageButtonContainer}>
                     <Button
                     buttonColor='#904500'
                     style={{borderRadius: 4}}
-                    labelStyle={styles.textContinueButton}
+                    labelStyle={RegisterHotelStyles.textContinueButton}
                     mode="contained"
                     onPress={pickImageAsync}>
                         Escolher imagem
                     </Button>
                 </SafeAreaView>
-                <SafeAreaView style={styles.continueButtonContainer}>
+                <SafeAreaView style={RegisterHotelStyles.continueButtonContainer}>
                     <Button
                     buttonColor='#904500'
                     style={{borderRadius: 4}}
-                    labelStyle={styles.textContinueButton}
+                    labelStyle={RegisterHotelStyles.textContinueButton}
                     mode="contained"
                     onPress={() => navigation.navigate('RegisterHotel5')}>
                         Continuar
                     </Button>
                 </SafeAreaView>
             </View>
-            <View style={styles.containerFooter}>
-                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.screenBottomImage}/>
+            <View style={RegisterHotelStyles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={RegisterHotelStyles.screenBottomImage}/>
             </View>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    containerMain: {
-        flex: 1,
-    },
-    containerHeader: {
-        flex: 0.1,
-        alignItems: 'center',
-        backgroundColor: '#d39c69',
-        paddingTop: StatusBar.currentHeight,
-    },
-    containerMiddle: {
-        flex: 0.8,
-        gap: 2,
-        alignItems: 'center',
-        backgroundColor: '#d39c69',
-        zIndex: 1,
-    },
-    containerFooter: {
-        flex: 0.15,
-        alignItems: 'center',
-        backgroundColor: '#d39c69',
-    },
-    returnButton: {
-        marginTop: '4%',
-        right: '35%',
-    },
-    textReturnButton: {
-        fontSize: 18,
-        color: '#000',
-        fontWeight: 'bold',
-        fontFamily: 'InterRegular',
-        textDecorationLine: 'underline',
-    },
-    containerText: {
-        width: '80%',
-        textAlign: 'left',
-        fontFamily: 'InterRegular',
-        fontSize: 30,
-        fontWeight: 'bold',
-    },
-    containerTextSub: {
-        paddingHorizontal: '10%',
-        textAlign: 'center',
-        fontFamily: 'InterRegular',
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginVertical: '5%',
-    },
-    imageContainer: {
-        aspectRatio: 1,
-        borderRadius: 10,
-        width: '40%',
-        height: '40%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#500808'
-    },
-    imageContainer2: {
-        borderRadius: 10,
-        width: '90%',
-        height: '90%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#b27339'
-    },
-    chooseImageButtonContainer: {
-        top: '2.5%',
-        width: '80%',
-        height: '10%',
-    },
-    continueButtonContainer: {
-        top: '1%',
-        width: '80%',
-        height: '10%',
-    },
-    textContinueButton: {
-        fontFamily: 'InterRegular',
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    screenBottomImage: {
-        width: '100%',
-        height: '100%',
-        resizeMode: 'stretch',
-    },
-})
 
 export default RegisterHotel4;

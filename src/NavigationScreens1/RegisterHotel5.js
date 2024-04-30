@@ -1,33 +1,34 @@
-import {View, SafeAreaView, StyleSheet, Image, Text, StatusBar} from 'react-native';
+import {View, SafeAreaView, Image, Text} from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useState } from 'react';
+import RegisterHotelStyles from '../../components/styles/RegisterHotelStyles';
 
 const RegisterHotel5 = ({ navigation }) => {
 
     const [text, setText] = useState("");
 
     return (
-        <View style={styles.containerMain}>
-            <View style={styles.containerHeader}>
+        <View style={RegisterHotelStyles.containerMain}>
+            <View style={RegisterHotelStyles.containerHeader}>
                 <Button
-                style={styles.returnButton}
-                labelStyle={styles.textReturnButton}
+                style={RegisterHotelStyles.returnButton}
+                labelStyle={RegisterHotelStyles.textReturnButton}
                 icon='keyboard-backspace'
                 mode='text'
                 onPress={() => navigation.navigate('RegisterHotel4')}>
                     Voltar
                 </Button>
             </View>
-            <View style={styles.containerMiddle}>
-                <Text style={styles.containerText}>
+            <View style={RegisterHotelStyles.containerMiddle}>
+                <Text style={RegisterHotelStyles.containerText}>
                     Cadastro de Hotel
                 </Text>
-                <Text style={styles.containerTextSub}>
+                <Text style={RegisterHotelStyles.containerTextSub}>
                     Como descreveria o seu hotel para possíveis clientes?
                 </Text>
-                <SafeAreaView style={styles.inputTextBox}>
+                <SafeAreaView style={RegisterHotelStyles.inputHotelDescrTextBox}>
                     <TextInput
-                        style={styles.textInput}
+                        style={RegisterHotelStyles.textInputHotelDescr}
                         outlineColor='#000'
                         cursorColor='#000'
                         selectionColor='#000'
@@ -40,107 +41,22 @@ const RegisterHotel5 = ({ navigation }) => {
                         onChangeText={text => setText(text)}
                     />
                 </SafeAreaView>
-                <SafeAreaView style={styles.continueButtonContainer}>
+                <SafeAreaView style={RegisterHotelStyles.continueButtonContainer}>
                     <Button
                     buttonColor='#904500'
                     style={{borderRadius: 4}}
-                    labelStyle={styles.textContinueButton}
+                    labelStyle={RegisterHotelStyles.textContinueButton}
                     mode="contained"
                     onPress={() => navigation.navigate('RegisterHotelEmailConf')}>
                         Continuar
                     </Button>
                 </SafeAreaView>
             </View>
-            <View style={styles.containerFooter}>
-                <Image source={require('../../assets/images/screenBottomIntro.png')} style={styles.screenBottomImage}/>
+            <View style={RegisterHotelStyles.containerFooter}>
+                <Image source={require('../../assets/images/screenBottomIntro.png')} style={RegisterHotelStyles.screenBottomImage}/>
             </View>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    containerMain: {
-        flex: 1,
-    },
-    containerHeader: {
-        flex: 0.1,
-        alignItems: 'center',
-        backgroundColor: '#d39c69',
-        paddingTop: StatusBar.currentHeight,
-    },
-    containerMiddle: {
-        flex: 0.8,
-        gap: 2,
-        alignItems: 'center',
-        backgroundColor: '#d39c69',
-        zIndex: 1,
-    },
-    containerFooter: {
-        flex: 0.15,
-        alignItems: 'center',
-        backgroundColor: '#d39c69',
-    },
-    returnButton: {
-        marginTop: '4%',
-        right: '35%',
-    },
-    textReturnButton: {
-        fontSize: 18,
-        color: '#000',
-        fontWeight: 'bold',
-        fontFamily: 'InterRegular',
-        textDecorationLine: 'underline',
-    },
-    containerText: {
-        width: '80%',
-        textAlign: 'left',
-        fontFamily: 'InterRegular',
-        fontSize: 30,
-        fontWeight: 'bold',
-    },
-    containerTextSub: {
-        paddingHorizontal: '5%',
-        textAlign: 'center',
-        fontFamily: 'InterRegular',
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginVertical: '5%',
-    },
-    inputTextBox: {
-        aspectRatio: 1,
-        width: '55%',
-        height: '55%',
-        borderRadius: 10,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        backgroundColor: '#fff'
-    },
-    textInput: {
-        width: '95%',
-        textAlign: 'left',
-        fontFamily: 'InterRegular',
-        fontSize: 20,
-        backgroundColor: '#efefef',
-    },
-    continueButtonContainer: {
-        top: '2.5%',
-        width: '80%',
-        height: '10%',
-    },
-    textContinueButton: {
-        fontFamily: 'InterRegular',
-        fontSize: 20,
-        fontWeight: 'bold'
-    },
-    buttonRowContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-    },
-    screenBottomImage: {
-        width: '100%',
-        height: '100%',
-        resizeMode: 'stretch',
-    },
-})
 
 export default RegisterHotel5;
