@@ -1,3 +1,5 @@
+// Definições de estilo para as telas de recuperação de senha
+
 import { StyleSheet, StatusBar } from 'react-native';
 
 const PasswordRecStyles = StyleSheet.create({

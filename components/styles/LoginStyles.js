@@ -1,3 +1,5 @@
+// Definições de estilo para as telas de login
+
 import { StyleSheet, StatusBar } from 'react-native';
 
 const LoginStyles = StyleSheet.create({

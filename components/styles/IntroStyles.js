@@ -1,3 +1,5 @@
+// Definições de estilo para as telas de introdução
+
 import { StyleSheet, StatusBar } from 'react-native';
 
 const IntroStyles = StyleSheet.create({

@@ -1,3 +1,5 @@
+// Definições de estilo para as telas de cadastro de hotel
+
 import { StyleSheet, StatusBar } from 'react-native';
 
 const RegisterHotelStyles = StyleSheet.create({

@@ -1,3 +1,5 @@
+// Definições de estilo para as telas de cadastro de usuário
+
 import { StyleSheet, StatusBar } from 'react-native';
 
 const RegisterUserStyles = StyleSheet.create({

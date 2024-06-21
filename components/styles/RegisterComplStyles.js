@@ -1,3 +1,5 @@
+// Definições de estilo para as telas de cadastro completo
+
 import { StyleSheet, StatusBar } from 'react-native';
 
 const RegisterComplStyles = StyleSheet.create({
