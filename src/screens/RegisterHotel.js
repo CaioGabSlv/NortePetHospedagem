@@ -7,7 +7,7 @@ const RegisterHotel = ({ navigation }) => {
   const [text, setText] = useState("");
 
   return (
-    <View style={RegisterHotelStyles.containerMain}>
+    <View style={RegisterHotelStyles.containerScreen}>
       <View style={RegisterHotelStyles.containerHeader}>
         <Button
           style={RegisterHotelStyles.returnButton}
@@ -19,7 +19,7 @@ const RegisterHotel = ({ navigation }) => {
           Voltar
         </Button>
       </View>
-      <View style={RegisterHotelStyles.containerMiddle}>
+      <View style={RegisterHotelStyles.containerMain}>
         <Text style={RegisterHotelStyles.containerText}>Cadastro de Hotel</Text>
         <Text style={RegisterHotelStyles.containerTextAlt}>Nome do Hotel</Text>
         <SafeAreaView style={RegisterHotelStyles.inputTextBox}>

@@ -7,7 +7,7 @@ const LoginHotel = ({ navigation }) => {
   const [text, setText] = useState("");
 
   return (
-    <View style={LoginStyles.containerMain}>
+    <View style={LoginStyles.containerScreen}>
       <View style={LoginStyles.containerHeader}>
         <Button
           style={LoginStyles.returnButton}
@@ -19,7 +19,7 @@ const LoginHotel = ({ navigation }) => {
           Voltar
         </Button>
       </View>
-      <View style={LoginStyles.containerMiddle}>
+      <View style={LoginStyles.containerMain}>
         <View style={LoginStyles.userIconView}>
           <Image
             source={require("../../assets/images/logoHotel.png")}

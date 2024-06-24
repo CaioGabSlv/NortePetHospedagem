@@ -25,7 +25,7 @@ const RegisterHotel3 = ({ navigation }) => {
   };
 
   return (
-    <View style={RegisterUserStyles.containerMain}>
+    <View style={RegisterUserStyles.containerScreen}>
       <View style={RegisterUserStyles.containerHeader}>
         <Button
           style={RegisterUserStyles.returnButton}
@@ -37,7 +37,7 @@ const RegisterHotel3 = ({ navigation }) => {
           Voltar
         </Button>
       </View>
-      <View style={RegisterUserStyles.containerMiddle}>
+      <View style={RegisterUserStyles.containerMain}>
         <Text style={RegisterUserStyles.containerText}>
           Cadastro de Usuário
         </Text>

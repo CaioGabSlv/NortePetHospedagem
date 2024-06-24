@@ -7,9 +7,9 @@ const RegisterCompleted = ({ navigation }) => {
   const [text, setText] = useState("");
 
   return (
-    <View style={RegisterComplStyles.containerMain}>
+    <View style={RegisterComplStyles.containerScreen}>
       <View style={RegisterComplStyles.containerHeader}></View>
-      <View style={RegisterComplStyles.containerMiddle}>
+      <View style={RegisterComplStyles.containerMain}>
         <SafeAreaView style={RegisterComplStyles.pawIconView}>
           <Image
             source={require("../../assets/images/paw.png")}

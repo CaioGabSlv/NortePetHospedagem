@@ -7,9 +7,9 @@ const Login = ({ navigation }) => {
   const [text, setText] = useState("");
 
   return (
-    <View style={LoginStyles.containerMain}>
+    <View style={LoginStyles.containerScreen}>
       <View style={LoginStyles.containerHeader}></View>
-      <View style={LoginStyles.containerMiddle}>
+      <View style={LoginStyles.containerMain}>
         <View style={LoginStyles.userIconView}>
           <Image
             source={require("../../assets/images/logoClient.png")}

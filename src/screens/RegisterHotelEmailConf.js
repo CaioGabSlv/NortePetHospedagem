@@ -7,9 +7,9 @@ const RegisterHotelEmailConf = ({ navigation }) => {
   const [text, setText] = useState("");
 
   return (
-    <View style={PasswordRecStyles.containerMain}>
+    <View style={PasswordRecStyles.containerScreen}>
       <View style={PasswordRecStyles.containerHeader}></View>
-      <View style={PasswordRecStyles.containerMiddle}>
+      <View style={PasswordRecStyles.containerMain}>
         <Text style={PasswordRecStyles.containerText}>Cadastro de Hotel</Text>
         <Text style={PasswordRecStyles.containerTextSub}>
           Digite o código enviado ao seu email para ativar sua conta
